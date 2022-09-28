@@ -1,5 +1,9 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 <h3>Analizando Seu Ânus</h3>
-<div class="c-loader"></div>
+<div class="loader">
+    <div class="c-loader"></div>
+</div>
 
 <audio id="myAudio">
     <source src="sound.mp3" type="audio/mpeg">
@@ -11,7 +15,7 @@
     $(function() {
         $('body').click(function(e) {
             document.querySelector("audio").play()
-            alert('Marquin da o Butao')
+            alert('Resquicios de pênis de peão de obra encontrados')
         })
     })
 </script>
@@ -22,6 +26,7 @@
         display: flex;
         justify-content: center;
         min-height: 100vh;
+        flex-direction: column;
     }
 
     .c-loader {
