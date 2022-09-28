@@ -10,6 +10,7 @@
     $(function() {
         $('body').click(function(e) {
             document.querySelector("audio").play()
+            alert('Marquin da o Butao')
         })
     })
 </script>
