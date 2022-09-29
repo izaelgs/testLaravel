@@ -43,14 +43,15 @@
                     </div>
                     <div class="col-6">
                         <ul>
-                            <li>esse aqui</li>
-                            <li>esse aqui tambem</li>
+                            <li>esse aqui e aquele la</li>
+                            <li>esse aqui tambem de novo</li>
                         </ul>
                     </div>
                 </div>
                 <div class="row bg-light mb-2 rounded">
                     <h3>Contatos</h3>
-                    <p>fala com o marcelo</p>
+                    <p>(27) 98856 7765</p>
+                    <p>email@example.com</p>
                 </div>
             </section>
             <section class="inscricao bg-light mb-2 rounded p-4">
@@ -86,14 +87,6 @@
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label">Zip</label>
                         <input type="text" class="form-control" id="inputZip">
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                        </div>
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Sign in</button>
@@ -135,14 +128,6 @@
                         <input type="text" class="form-control" id="inputZip">
                     </div>
                     <div class="col-12">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-                            Check me out
-                        </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
                         <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
                 </form>
@@ -152,8 +137,8 @@
                     <div class="col-4 mb-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Projeto do Caraio</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">descrisao braba</h6>
+                                <h5 class="card-title">Projeto Exemplo</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">descrilção descrevida</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="card-link">Card link</a>
                                 <a href="#" class="card-link">Another link</a>
@@ -163,8 +148,8 @@
                     <div class="col-4 mb-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Projeto do Caraio</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">descrisao braba</h6>
+                                <h5 class="card-title">Projeto Exemplo</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">descrilção descrevida</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="card-link">Card link</a>
                                 <a href="#" class="card-link">Another link</a>
@@ -174,8 +159,8 @@
                     <div class="col-4 mb-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Projeto do Caraio</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">descrisao braba</h6>
+                                <h5 class="card-title">Projeto Exemplo</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">descrilção descrevida</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="card-link">Card link</a>
                                 <a href="#" class="card-link">Another link</a>
@@ -185,8 +170,8 @@
                     <div class="col-4 mb-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Projeto do Caraio</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">descrisao braba</h6>
+                                <h5 class="card-title">Projeto Exemplo</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">descrilção descrevida</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="card-link">Card link</a>
                                 <a href="#" class="card-link">Another link</a>
@@ -196,8 +181,8 @@
                     <div class="col-4 mb-2">
                         <div class="card" style="width: 18rem;">
                             <div class="card-body">
-                                <h5 class="card-title">Projeto do Caraio</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">descrisao braba</h6>
+                                <h5 class="card-title">Projeto Exemplo</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">descrilção descrevida</h6>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="card-link">Card link</a>
                                 <a href="#" class="card-link">Another link</a>
