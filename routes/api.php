@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,18 @@ Route::get('/test', function(){
     // $response->header('Content-Type', 'application/json');
 
     return ['mensagem' => 'ela sai eu boto calsinha'];
+});
+
+
+// Projetos
+
+Route::namespace('App\Http\Controllers\Api')->group(function() {
+    Route::prefix('projetos')->group(function() {
+        Route::get('/', 'ProjetoController@index');
+        Route::get('/{id}', 'ProjetoController@show');
+        Route::post('/', 'ProjetoController@save')->middleware('auth.basic');
+        Route::put('/', 'ProjetoController@update');
+    });
+
+    Route::resource('/users', 'UserController');
 });
