@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProjetoCollection;
 use App\Http\Resources\ProjetoResource;
+use App\Repository\ProjetoRepository;
 
 class ProjetoController extends Controller
 {
@@ -19,25 +20,17 @@ class ProjetoController extends Controller
     public function index(Request $request) {
 
         $projetos = $this->projeto;
+        $projetoRepository = new ProjetoRepository($projetos);
 
-        // filtrar condições de acordo com querystring conditions
         if($request->has('conditions')) {
-            $expressions = explode(';', $request->get('conditions'));
-
-            foreach($expressions as $e) {
-                $exp = explode(':', $e);
-                $projetos = $projetos->where($exp[0], $exp[1]);
-            }
-
+            $projetos = $projetoRepository->selectConditions($request->get('conditions'));
         }
 
-        // filtrar campos de acordo com querystring fields
         if($request->has('fields')) {
-            $fields = $request->get('fields');
-            $projetos = $projetos->select($fields);
+            $projetos = $projetoRepository->selectFilter($request->get('fields'));
         }
 
-        return response()->json($projetos->paginate(10));
+        return response()->json($projetoRepository->getResult()->paginate(10));
         // return new ProjetoCollection($projetos->paginate(10));
     }
 
