@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Projeto;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjetoRequest;
 use Illuminate\Http\Request;
 use App\Http\Resources\ProjetoCollection;
 use App\Http\Resources\ProjetoResource;
@@ -41,7 +42,7 @@ class ProjetoController extends Controller
         return new ProjetoResource($projeto);
     }
 
-    public function save(Request $request) {
+    public function save(ProjetoRequest $request) {
 
         $data = $request->all();
         $projeto = $this->projeto->create($data);
@@ -49,7 +50,7 @@ class ProjetoController extends Controller
         return response()->json($data);
     }
 
-    public function update(Request $request) {
+    public function update(ProjetoRequest $request) {
 
         $data = $request->all();
         $projeto = $this->projeto->find($data['id']);
