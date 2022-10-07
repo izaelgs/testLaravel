@@ -37,5 +37,13 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
         Route::put('/', 'ProjetoController@update');
     });
 
-    Route::resource('/users', 'UserController');
+    // Route::prefix('estudante')->group(function() {
+    //     Route::resource('/', 'EstudanteController');
+    // });
+
+    Route::resource('/curso', 'CursoController');
+
+    Route::resource('/user', 'UserController');
+
+    Route::resource('/estudante', 'EstudanteController');
 });
