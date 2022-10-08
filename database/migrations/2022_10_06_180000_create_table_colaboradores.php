@@ -16,6 +16,7 @@ class CreateTableColaboradores extends Migration
         Schema::create('colaboradores', function (Blueprint $table) {
             $table->id();
             $table->foreignId('area')
+                ->nullable()
                 ->constrained('area_atuacao')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
@@ -28,7 +29,7 @@ class CreateTableColaboradores extends Migration
             $table->string('instagram')->nullable(true);
             $table->string('facebook')->nullable(true);
             $table->string('linkedin')->nullable(true);
-            $table->string('responsável')->nullable(true);
+            $table->string('responsavel')->nullable(true);
             $table->tinyInteger('forma_integracao');
             $table->timestamps();
         });

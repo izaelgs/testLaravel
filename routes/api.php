@@ -30,20 +30,24 @@ Route::get('/test', function(){
 // Projetos
 
 Route::namespace('App\Http\Controllers\Api')->group(function() {
-    Route::prefix('projetos')->group(function() {
-        Route::get('/', 'ProjetoController@index');
-        Route::get('/{id}', 'ProjetoController@show');
-        Route::post('/', 'ProjetoController@save')->middleware('auth.basic');
-        Route::put('/', 'ProjetoController@update');
-    });
 
     // Route::prefix('estudante')->group(function() {
-    //     Route::resource('/', 'EstudanteController');
-    // });
-
-    Route::resource('/curso', 'CursoController');
+        //     Route::resource('/', 'EstudanteController');
+        // });
 
     Route::resource('/user', 'UserController');
 
+    Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
+
+    Route::prefix('projeto')->group(function() {
+        Route::get('/', 'ProjetoController@index');
+        Route::get('/{id}', 'ProjetoController@show');
+        Route::post('/', 'ProjetoController@save');
+        Route::put('/', 'ProjetoController@update')->middleware('auth.basic');
+    });
+
+    Route::resource('/curso', 'CursoController');
+
     Route::resource('/estudante', 'EstudanteController');
+    Route::resource('/colaborador', 'ColaboradorController');
 });

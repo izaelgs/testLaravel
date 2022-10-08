@@ -13,7 +13,7 @@ class CreateTableAreaAtuacaoProjeto extends Migration
      */
     public function up()
     {
-        Schema::create('area_atuacao_projeto', function (Blueprint $table) {
+        Schema::create('area_atuacao_projetos', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
             $table->timestamps();

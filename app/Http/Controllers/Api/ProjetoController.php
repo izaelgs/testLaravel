@@ -47,7 +47,7 @@ class ProjetoController extends Controller
         $data = $request->all();
         $projeto = $this->projeto->create($data);
 
-        return response()->json($data);
+        return response()->json($projeto);
     }
 
     public function update(ProjetoRequest $request) {

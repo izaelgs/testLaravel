@@ -2,38 +2,107 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
+use App\Models\User;
 
 class UserController extends Controller
 {
 
-    public function index()
+    private $user;
+
+    public function __construct(User $user)
     {
-        return response()->json(['message' => __METHOD__]);
+        $this->user = $user;
     }
 
+    public function index() {
 
-    public function store(Request $request)
-    {
-        return response()->json(['message' => __METHOD__]);
+        try {
+            $user = $this->user->paginate('10');
+
+            return response()->json($user, 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
+    public function show($id) {
 
-    public function show($id)
-    {
-        return response()->json(['message' => __METHOD__]);
+        try {
+            $user = $this->user->findOrFail($id);
+
+            return response()->json($user, 200);
+
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+
     }
 
+    public function store(UserRequest $request) {
 
-    public function update(Request $request, $id)
-    {
-        return response()->json(['message' => __METHOD__]);
+        $data = $request->all();
+
+        try {
+
+            $data['password'] = bcrypt($data['password']);
+            $user = $this->user->create($data);
+
+            return response()->json([
+                'data' => [
+                    'msg' => 'cadastro concluido com suseso'
+                ]
+            ], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
+    public function update($id, UserRequest $request) {
+        $data = $request->all();
 
-    public function destroy($id)
-    {
-        return response()->json(['message' => __METHOD__]);
+        if($request->has('password') && $request->get('password')) {
+            $data['password'] = bcrypt($data['password']);
+        } else {
+            unset($data['password']);
+        }
+
+        try {
+
+            $user = $this->user->findOrFail($id);
+            $user->update($data);
+
+            return response()->json([
+                'data' => [
+                    'msg' => 'cadastro atualizado com suseso'
+                ]
+            ], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function destroy($id) {
+
+        try {
+
+            $user = $this->user->findOrFail($id);
+            $user->delete();
+
+            return response()->json([
+                'data' => [
+                    'msg' => 'cadastro removido com suseso'
+                ]
+            ], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 }

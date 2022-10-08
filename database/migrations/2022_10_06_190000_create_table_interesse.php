@@ -15,15 +15,17 @@ class CreateTableInteresse extends Migration
     {
         Schema::create('interesse', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('estudante')
+            $table->foreignId('estudante_id')
+                ->nullable()
                 ->constrained('estudantes')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreignId('colaborador')
+            $table->foreignId('colaborador_id')
+                ->nullable()
                 ->constrained('colaboradores')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreignId('projeto')
+            $table->foreignId('projeto_id')
                 ->constrained('projetos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
