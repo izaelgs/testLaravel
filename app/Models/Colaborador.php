@@ -22,6 +22,6 @@ class Colaborador extends Model
     ];
 
     public function projetos() {
-        return $this->belongsToMany(Projeto::class, 'interesse');
+        return $this->belongsToMany(Projeto::class, 'interesses');
     }
 }

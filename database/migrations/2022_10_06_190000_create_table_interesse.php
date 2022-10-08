@@ -13,7 +13,7 @@ class CreateTableInteresse extends Migration
      */
     public function up()
     {
-        Schema::create('interesse', function (Blueprint $table) {
+        Schema::create('interesses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('estudante_id')
                 ->nullable()
