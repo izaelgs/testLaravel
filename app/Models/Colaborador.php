@@ -21,7 +21,7 @@ class Colaborador extends Model
         'forma_integracao',
     ];
 
-    public function projetos() {
-        return $this->belongsToMany(Projeto::class, 'interesses');
+    public function interesse() {
+        return $this->hasMany(Interesse::class);
     }
 }

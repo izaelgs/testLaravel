@@ -24,7 +24,7 @@ class Estudante extends Model
         return $this->belongsTo(Curso::class, 'curso');
     }
 
-    public function projetos() {
-        return $this->belongsToMany(Projeto::class, 'interesses');
+    public function interesse() {
+        return $this->hasMany(Interesse::class);
     }
 }

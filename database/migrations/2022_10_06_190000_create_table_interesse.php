@@ -29,6 +29,10 @@ class CreateTableInteresse extends Migration
                 ->constrained('projetos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->foreignId('area')
+                ->constrained('area_atuacao_projetos')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

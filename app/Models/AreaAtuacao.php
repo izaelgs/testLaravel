@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Projeto extends Model
+class AreaAtuacao extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'titulo', 'descricao', 'area'
-    ];
+    protected $table = 'area_atuacao';
 
-    function areaAtuacao() {
-        return $this->belongsTo(AreaAtuacao::class, 'area');
-    }
+    protected $fillable = [
+        'titulo'
+    ];
 }

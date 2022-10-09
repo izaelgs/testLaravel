@@ -4,24 +4,22 @@ namespace App\Http\Controllers\Api;
 
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EstudanteRequest;
-use App\Models\Estudante;
+use App\Models\AreaAtuacao;
 use Illuminate\Http\Request;
 
-class EstudanteController extends Controller
+class AreaAtuacaoController extends Controller
 {
-    private $estudante;
-    public function __construct(Estudante $estudante)
-    {
-        $this->estudante = $estudante;
+    private $areaAtuacao;
+
+    public function __construct(AreaAtuacao $areaAtuacao) {
+        $this->areaAtuacao = $areaAtuacao;
     }
 
     public function index() {
-
         try {
-            $estudante = $this->estudante->paginate('10');
+            $areaAtuacao = $this->areaAtuacao->all();
 
-            return response()->json($estudante, 200);
+            return response()->json($areaAtuacao, 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);
@@ -29,58 +27,47 @@ class EstudanteController extends Controller
     }
 
     public function show($id) {
-
         try {
-            $estudante = $this->estudante->findOrFail($id);
+            $areaAtuacao = $this->areaAtuacao->findOrFail($id);
 
-            return response()->json($estudante, 200);
+            return response()->json($areaAtuacao, 200);
 
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);
         }
-
     }
 
-    public function store(EstudanteRequest $request) {
-
+    public function store(Request $request) {
         $data = $request->all();
 
         try {
 
-            $estudante = $this->estudante->create($data);
-
-            $estudante->interesse()->create([
-                'area' => $data['area_interesse'],
-                'projeto_id' => $data['projeto']
-            ]);
+            $areaAtuacao = $this->areaAtuacao->create($data);
 
             return response()->json([
                 'data' => [
                     'msg' => 'cadastro concluido com suseso'
                 ]
             ], 200);
-        } catch (\Exception $e) {
-            $message = new ApiMessages($e->getMessage());
-            return response()->json($message->getMessage(), 401);
+        } catch (\Error $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ]);
         }
     }
 
-    public function update($id, EstudanteRequest $request) {
+    public function update(Request $request, $id) {
         $data = $request->all();
 
         try {
 
-            $estudante = $this->estudante->findOrFail($id);
-            $estudante->update($data);
-
-            if(isset($data['projetos']) && count($data['projetos'])) {
-                $estudante->projetos()->sync($data['projetos']);
-            }
+            $areaAtuacao = $this->areaAtuacao->findOrFail($id);
+            $areaAtuacao->update($data);
 
             return response()->json([
                 'data' => [
-                    'msg' => 'cadastro atualizado com suseso'
+                    'msg' => 'area de atuação de projeto atualizada com suseso'
                 ]
             ], 200);
         } catch (\Exception $e) {
@@ -90,15 +77,14 @@ class EstudanteController extends Controller
     }
 
     public function destroy($id) {
-
         try {
 
-            $estudante = $this->estudante->findOrFail($id);
-            $estudante->delete();
+            $areaAtuacao = $this->areaAtuacao->findOrFail($id);
+            $areaAtuacao->delete();
 
             return response()->json([
                 'data' => [
-                    'msg' => 'cadastro removido com suseso'
+                    'msg' => 'area de atuação removida com suseso'
                 ]
             ], 200);
         } catch (\Exception $e) {

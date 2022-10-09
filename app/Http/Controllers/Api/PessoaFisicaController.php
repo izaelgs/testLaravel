@@ -4,23 +4,23 @@ namespace App\Http\Controllers\Api;
 
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ColaboradorRequest;
-use App\Models\Colaborador;
+use App\Models\PessoaFisica;
+use Illuminate\Http\Request;
 
-class ColaboradorController extends Controller
+class pessoaFisicaController extends Controller
 {
-    private $colaborador;
-    public function __construct(Colaborador $colaborador)
+    private $pessoa;
+    public function __construct(PessoaFisica $pessoa)
     {
-        $this->colaborador = $colaborador;
+        $this->pessoa = $pessoa;
     }
 
     public function index() {
 
         try {
-            $colaborador = $this->colaborador->paginate('10');
+            $pessoa = $this->pessoa->paginate('10');
 
-            return response()->json($colaborador, 200);
+            return response()->json($pessoa, 200);
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
             return response()->json($message->getMessage(), 401);
@@ -30,9 +30,9 @@ class ColaboradorController extends Controller
     public function show($id) {
 
         try {
-            $colaborador = $this->colaborador->findOrFail($id);
+            $pessoa = $this->pessoa->findOrFail($id);
 
-            return response()->json($colaborador, 200);
+            return response()->json($pessoa, 200);
 
         } catch (\Exception $e) {
             $message = new ApiMessages($e->getMessage());
@@ -41,17 +41,17 @@ class ColaboradorController extends Controller
 
     }
 
-    public function store(ColaboradorRequest $request) {
+    public function store(Request $request) {
 
         $data = $request->all();
 
         try {
 
-            $colaborador = $this->colaborador->create($data);
-
-            $colaborador->interesse()->create([
-                'area' => $data['area_interesse'],
-                'projeto_id' => $data['projeto']
+            $pessoa = $this->pessoa->create($data);
+            $pessoa->proponente()->create([
+                'area' => $data['area_projeto'],
+                'app' => $data['app'],
+                'contato' => $data['contato'],
             ]);
 
             return response()->json([
@@ -65,16 +65,16 @@ class ColaboradorController extends Controller
         }
     }
 
-    public function update($id, ColaboradorRequest $request) {
+    public function update($id, Request $request) {
         $data = $request->all();
 
         try {
 
-            $colaborador = $this->colaborador->findOrFail($id);
-            $colaborador->update($data);
+            $pessoa = $this->pessoa->findOrFail($id);
+            $pessoa->update($data);
 
             if(isset($data['projetos']) && count($data['projetos'])) {
-                $colaborador->projetos()->sync($data['projetos']);
+                $pessoa->projetos()->sync($data['projetos']);
             }
 
             return response()->json([
@@ -92,8 +92,8 @@ class ColaboradorController extends Controller
 
         try {
 
-            $colaborador = $this->colaborador->findOrFail($id);
-            $colaborador->delete();
+            $pessoa = $this->pessoa->findOrFail($id);
+            $pessoa->delete();
 
             return response()->json([
                 'data' => [

@@ -19,12 +19,12 @@ class CreateTableProponentes extends Migration
                 ->constrained('area_atuacao_projetos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreignId('empresa')
+            $table->foreignId('empresa_id')
                 ->nullable()
                 ->constrained('empresas')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreignId('pessoa_fisica')
+            $table->foreignId('pessoa_fisica_id')
                 ->nullable()
                 ->constrained('pessoas_fisicas')
                 ->onUpdate('cascade')
