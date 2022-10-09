@@ -14,10 +14,10 @@ class Projeto extends Model
     ];
 
     public function estudantes() {
-        return $this->gelongsToMany(Estudante::class, 'interesse');
+        return $this->belongsToMany(Estudante::class, 'interesses');
     }
 
     public function colaboradoes() {
-        return $this->gelongsToMany(Colaborador::class, 'interesse');
+        return $this->belongsToMany(Colaborador::class, 'interesses');
     }
 }

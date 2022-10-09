@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Api\ApiMessages;
 use App\Models\Projeto;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjetoRequest;
@@ -44,26 +45,73 @@ class ProjetoController extends Controller
 
     public function save(ProjetoRequest $request) {
 
-        $data = $request->all();
-        $projeto = $this->projeto->create($data);
+        try {
+            $data = $request->all();
+            $projeto = $this->projeto->create($data);
 
-        return response()->json($projeto);
+            return response()->json([
+                'data' => [
+                    'msg' => 'projeto cadastrado com suseso'
+                ]
+            ], 200);return response()->json($projeto);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
     public function update(ProjetoRequest $request) {
 
-        $data = $request->all();
-        $projeto = $this->projeto->find($data['id']);
-        $projeto->update($data);
+        try {
+            $data = $request->all();
+            $projeto = $this->projeto->find($data['id']);
+            $projeto->update($data);
 
-        return response()->json($projeto);
+            return response()->json([
+                'data' => [
+                    'msg' => 'projeto atualizado com suseso'
+                ]
+            ], 200);return response()->json($projeto);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
     public function delete($id) {
 
-        $projeto = $this->projeto->find($id);
-        $projeto->delete();
+        try {
+            $projeto = $this->projeto->find($id);
+            $projeto->delete();
 
-        return response()->json($projeto);
+            return response()->json([
+                'data' => [
+                    'msg' => 'projeto deletado com suseso'
+                ]
+            ], 200);return response()->json($projeto);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function estudantes($id) {
+        try {
+            $projeto = $this->projeto->findOrFail($id);
+            return response()->json($projeto->estudantes, 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
+    }
+
+    public function colaboradoes($id) {
+        try {
+            $projeto = $this->projeto->findOrFail($id);
+            return response()->json($projeto->colaboradoes, 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 }

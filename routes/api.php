@@ -20,9 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/test', function(){
-    // $response = new \Illuminate\Http\Response(json_encode(['mensagem' => 'ela sai eu boto calsinha']));
-    // $response->header('Content-Type', 'application/json');
-
     return ['mensagem' => 'ela sai eu boto calsinha'];
 });
 
@@ -31,23 +28,33 @@ Route::get('/test', function(){
 
 Route::namespace('App\Http\Controllers\Api')->group(function() {
 
-    // Route::prefix('estudante')->group(function() {
-        //     Route::resource('/', 'EstudanteController');
-        // });
-
-    Route::resource('/user', 'UserController');
-
-    Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
+    Route::post('/Login', 'Auth\LoginJwtController@login')->name('login');
+    Route::get('/Logout', 'Auth\LoginJwtController@login')->name('logout');
 
     Route::prefix('projeto')->group(function() {
         Route::get('/', 'ProjetoController@index');
         Route::get('/{id}', 'ProjetoController@show');
-        Route::post('/', 'ProjetoController@save');
-        Route::put('/', 'ProjetoController@update')->middleware('auth.basic');
     });
-
-    Route::resource('/curso', 'CursoController');
 
     Route::resource('/estudante', 'EstudanteController');
     Route::resource('/colaborador', 'ColaboradorController');
+
+
+
+    // Login Required
+    Route::group(['middleware' => ['jwt.auth']], function() {
+
+        Route::resource('/user', 'UserController');
+
+        Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
+
+        Route::prefix('projeto')->group(function() {
+            Route::get('/{id}/estudantes', 'ProjetoController@estudantes');
+            Route::get('/{id}/colaboradoes', 'ProjetoController@colaboradoes');
+            Route::post('/', 'ProjetoController@save');
+            Route::put('/{id}', 'ProjetoController@update')->middleware('auth.basic');
+        });
+
+        Route::resource('/curso', 'CursoController');
+    });
 });
