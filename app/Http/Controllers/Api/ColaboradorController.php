@@ -73,10 +73,6 @@ class ColaboradorController extends Controller
             $colaborador = $this->colaborador->findOrFail($id);
             $colaborador->update($data);
 
-            if(isset($data['projetos']) && count($data['projetos'])) {
-                $colaborador->projetos()->sync($data['projetos']);
-            }
-
             return response()->json([
                 'data' => [
                     'msg' => 'cadastro atualizado com suseso'

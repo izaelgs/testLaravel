@@ -60,11 +60,11 @@ class ProjetoController extends Controller
         }
     }
 
-    public function update(ProjetoRequest $request) {
+    public function update(ProjetoRequest $request, $id) {
 
         try {
             $data = $request->all();
-            $projeto = $this->projeto->find($data['id']);
+            $projeto = $this->projeto->find($id);
             $projeto->update($data);
 
             return response()->json([
