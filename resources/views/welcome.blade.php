@@ -48,10 +48,7 @@
             </div>
         </div>
     </nav>
-    <div class="items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        <!-- <div class="max-w-6xl mx-auto sm:px-6 lg:px-8 text-success">
-                <h1>UniTech</h1>
-            </div> -->
+    <div class="items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
 
         <main class="container text-center text-light mt-5">
             <section class="institucional mb-2 row d-flex align-items-center" id="sobre">
