@@ -64,7 +64,7 @@
             <section class="inscricao mb-2 rounded" id="estudante">
                 <h2>Sou Estudante</h2>
                 <p>Suspendisse facilisis venenatis libero eu euismod. Etiam sed libero sit amet diam posuere tincidunt vitae sit amet nulla. Nullam pellentesque mollis purus. Proin quis leo ut felis suscipit scelerisque. Nulla ac metus nulla. Maecenas ac nisl ut enim fringilla sagittis. Phasellus quis nulla ex. Aenean in massa id magna consequat facilisis quis nec lacus. Maecenas molestie sollicitudin nisi, vel hendrerit tortor convallis a.</p>
-                <div class="row d-flex align-items-center">
+                <div class="row d-flex flex-column-reverse flex-md-row align-items-center">
                     <div class="col-md-6">
                         <form class="row g-3">
                             <div class="col-md-6">
@@ -93,14 +93,14 @@
                                     <option>...</option>
                                 </select>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-8 col-md-4">
                                 <label for="inputState" class="form-label">Área</label>
                                 <select id="inputState" class="form-select">
                                     <option selected>Escolha uma Área...</option>
                                     <option>...</option>
                                 </select>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-4 col-md-2">
                                 <label for="periodo" class="form-label">Período</label>
                                 <input type="number" class="form-control" id="periodo" name="periodo" min="1" max="5" value="1">
                             </div>
