@@ -19,3 +19,13 @@ h1 {
     background: rgba(26, 32, 45, 0.719);
     background: linear-gradient(180deg, rgba(26, 32, 45, 1) 0%, rgba(26,32,45, 0.98) 85%, rgba(26,32,45,0) 100%);
 }
+
+.form-control:focus {
+    border-color: #82EA0F !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 234, 15, 0.6) !important;
+}
+
+select:focus {
+    border-color: #82EA0F !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 234, 15, 0.6) !important;
+}
