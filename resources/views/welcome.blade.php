@@ -48,7 +48,7 @@
         <main class="container text-center text-light mt-5" id="main">
             <section class="institucional mb-2 row d-flex align-items-center">
                 <div class="col-md-6">
-                    <img src="assets/img/GOHxPB_Balloon_BG.PNG" alt="" class="responsive">
+                    <img src="assets/img/GOHxPB_Balloon_BG.png" alt="" class="responsive">
                 </div>
                 <div class="col-md-6">
                     <h3>O Laboratório</h3>
@@ -126,7 +126,7 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <img src="assets/img/GOHxPB_Apple.PNG" alt="" class="responsive">
+                        <img src="assets/img/GOHxPB_Apple.png" alt="" class="responsive">
                     </div>
                 </div>
             </section>
@@ -136,7 +136,7 @@
                 <p>Suspendisse facilisis venenatis libero eu euismod. Etiam sed libero sit amet diam posuere tincidunt vitae sit amet nulla. Nullam pellentesque mollis purus. Proin quis leo ut felis suscipit scelerisque. Nulla ac metus nulla. Maecenas ac nisl ut enim fringilla sagittis. Phasellus quis nulla ex. Aenean in massa id magna consequat facilisis quis nec lacus. Maecenas molestie sollicitudin nisi, vel hendrerit tortor convallis a.</p>
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6">
-                        <img src="assets/img/GOHxPB_Twister.PNG" alt="" class="responsive">
+                        <img src="assets/img/GOHxPB_Twister.png" alt="" class="responsive">
                     </div>
                     <div class="col-md-6">
                         <form class="row g-3">
