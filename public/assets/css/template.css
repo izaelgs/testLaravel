@@ -13,3 +13,8 @@ h1 {
     max-width: 80%;
     /* height: 100vh; */
 }
+
+.navbar {
+    background: rgba(26, 32, 45, 0.719);
+    background: linear-gradient(180deg, rgba(26, 32, 45, 1) 0%, rgba(26,32,45, 0.98) 85%, rgba(26,32,45,0) 100%);
+}

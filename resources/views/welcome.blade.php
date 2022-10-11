@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
-<body class="antialiased">
+<body class="antialiased" id="main">
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand text-success" href="#main">
@@ -30,7 +30,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-secondary" aria-current="page" href="#">Contato</a>
+                        <a class="nav-link active text-secondary" aria-current="page" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-secondary" aria-current="page" href="#estudante">Estudante</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-secondary" aria-current="page" href="#colaborador">Colaborador</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -45,8 +51,8 @@
                 <h1>UniTech</h1>
             </div> -->
 
-        <main class="container text-center text-light mt-5" id="main">
-            <section class="institucional mb-2 row d-flex align-items-center">
+        <main class="container text-center text-light mt-5">
+            <section class="institucional mb-2 row d-flex align-items-center" id="sobre">
                 <div class="col-md-6">
                     <img src="assets/img/GOHxPB_Balloon_BG.png" alt="" class="responsive">
                 </div>
@@ -56,7 +62,7 @@
                 </div>
             </section>
             <br>
-            <section class="inscricao mb-2 rounded">
+            <section class="inscricao mb-2 rounded" id="estudante">
                 <h2>Sou Estudante</h2>
                 <p>Suspendisse facilisis venenatis libero eu euismod. Etiam sed libero sit amet diam posuere tincidunt vitae sit amet nulla. Nullam pellentesque mollis purus. Proin quis leo ut felis suscipit scelerisque. Nulla ac metus nulla. Maecenas ac nisl ut enim fringilla sagittis. Phasellus quis nulla ex. Aenean in massa id magna consequat facilisis quis nec lacus. Maecenas molestie sollicitudin nisi, vel hendrerit tortor convallis a.</p>
                 <div class="row d-flex align-items-center">
@@ -131,7 +137,7 @@
                 </div>
             </section>
             <br>
-            <section class="inscricao mb-2 rounded">
+            <section class="inscricao mb-2 rounded" id="colaborador">
                 <h2>Num Sou Estudante</h2>
                 <p>Suspendisse facilisis venenatis libero eu euismod. Etiam sed libero sit amet diam posuere tincidunt vitae sit amet nulla. Nullam pellentesque mollis purus. Proin quis leo ut felis suscipit scelerisque. Nulla ac metus nulla. Maecenas ac nisl ut enim fringilla sagittis. Phasellus quis nulla ex. Aenean in massa id magna consequat facilisis quis nec lacus. Maecenas molestie sollicitudin nisi, vel hendrerit tortor convallis a.</p>
                 <div class="row d-flex align-items-center">
