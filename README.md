@@ -10,8 +10,8 @@
 <p>Após instalar as ferramentas acima é necessário executar os seguintes comandos</p>
 <ul>    
     <li>git clone git@github.com:izaelgs/testLaravel.git</li>
-    <li>composer install</li>
     <li>cd testLaravel</li>
+    <li>composer install</li>
     <li>php artisan key:generate</li>
 </ul>
 <p>Após instalar as ferramentas necessárias e executar os comandos acima é necessário con figurar o arquivo .env que pode ser configurado a partir do arquivo .env.example</p>
