@@ -3,6 +3,12 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-c
 body {
     font-family: 'Nunito', sans-serif;
     background-color: rgba(26, 32, 45, 1)!important;
+    margin-bottom: 0px;
+}
+
+footer {
+    background-color: #161B26;
+    bottom: 0;
 }
 
 h1 {
@@ -29,4 +35,8 @@ h1 {
 select:focus {
     border-color: #82EA0F !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 234, 15, 0.6) !important;
+}
+
+.teste {
+    color: #161B26;
 }
