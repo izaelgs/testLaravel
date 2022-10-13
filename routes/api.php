@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function(){
+Route::get('/maisuma', function(){
     return ['mensagem' => 'ela sai eu boto calsinha'];
 });
 
@@ -41,12 +41,12 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
     Route::resource('/empresa', 'EmpresaController');
     Route::resource('/pessoa_fisica', 'PessoaFisicaController');
 
-    Route::resource('/user', 'UserController');
+    // Route::resource('/user', 'UserController');
 
+    // Route::resource('/curso', 'CursoController');
 
     // Login Required
     Route::group(['middleware' => ['jwt.auth']], function() {
-
 
         Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
         Route::resource('/areaAtuacao', 'AreaAtuacaoController');
@@ -58,6 +58,5 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
             Route::put('/{id}', 'ProjetoController@update')->middleware('auth.basic');
         });
 
-        Route::resource('/curso', 'CursoController');
     });
 });

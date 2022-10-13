@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
 use App\Models\Curso;
 use Illuminate\Http\Request;
@@ -14,10 +15,20 @@ class CursoController extends Controller
         $this->curso = $curso;
     }
 
-    public function index() {
-        $curso = $this->curso->paginate('10');
+    public function teste() {
+        return 'teste';
+    }
 
-        return response()->json($curso, 200);
+    public function index() {
+
+        try {
+            $curso = $this->curso->paginate('10');
+
+            return response()->json($curso, 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
+        }
     }
 
     public function store(Request $request) {
