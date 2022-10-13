@@ -13,8 +13,7 @@
     <li>composer install</li>
     <li>cd testLaravel</li>
     <li>php artisan key:generate</li>
-    <li>npm run prod</li>
 </ul>
 <p>Após instalar as ferramentas necessárias e executar os comandos acima é necessário con figurar o arquivo .env que pode ser configurado a partir do arquivo .env.example</p>
 <p>Em seguida precisamos construir a estrutura de dados executando o comando *php artisan migrate* e, se houver preferência em caso de testes, também pode ser executado o comando *php artisan db:seed* para preencher algumas tabelas aleatoriamente</p>
-<p>podemos então iniciar a aplicação com o comando *php artisan serve* que o laravel estará rodando por padrão em http://localhost:8000</p>
+<p>A seguir compilamos os assets do projeto com *npm run dev* e podemos então iniciar a aplicação com o comando *php artisan serve* que o laravel estará rodando por padrão em http://localhost:8000</p>
