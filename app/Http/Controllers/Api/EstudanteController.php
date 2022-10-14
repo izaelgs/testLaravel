@@ -50,10 +50,12 @@ class EstudanteController extends Controller
 
             $estudante = $this->estudante->create($data);
 
-            $estudante->interesse()->create([
-                'area' => $data['area_interesse'],
-                'projeto_id' => $data['projeto']
-            ]);
+            if(isset($data['area_interesse'])) {
+                $estudante->interesse()->create([
+                    'area' => $data['area_interesse'],
+                    'projeto_id' => $data['projeto']
+                ]);
+            }
 
             return response()->json([
                 'data' => [

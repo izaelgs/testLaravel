@@ -1,6 +1,10 @@
 @include('template.header')
 @include('template.nav')
 <main class="container text-center text-light mt-5">
+    <!-- Avisos em Geral -->
+    <div class="toast-container position-fixed bottom-0 right-0 p-3">
+    </div>
+    <!-- Apresentação -->
     <section class="institucional mb-2 row d-flex align-items-center" id="sobre">
         <div class="col-md-6">
             <img src="img/GOHxPB_Balloon_BG.png" alt="" class="responsive">
@@ -31,7 +35,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="registro_academico" class="form-label">RA (Registro Acadêmico)*</label>
-                        <input type="text" class="form-control" id="registro_academico" name="registro_academico" placeholder="Apartment, studio, or floor">
+                        <input type="text" class="form-control" id="registro_academico" name="registro_academico" placeholder="9999999999">
                     </div>
                     <div class="col-md-6">
                         <label for="curso" class="form-label">Curso*</label>
@@ -62,14 +66,12 @@
                         <label for="projeto" class="form-label">Projeto (Opcional)</label>
                         <select id="projeto" name="projeto" class="form-select">
                             <option hidden value="" value="">Escolha um Projeto de Interesse...</option>
-                            <option>...</option>
                         </select>
                     </div>
                     <div class="col-md-6">
                         <label for="area_interesse" class="form-label">Área de Interesse</label>
                         <select id="area_interesse" name="area_interesse" class="form-select">
-                            <option hidden value="" >Escolha uma Área...</option>
-                            <option>...</option>
+                            <option hidden value="">Escolha uma Área...</option>
                         </select>
                     </div>
                     <div class="col-12 d-grid gap-2">
