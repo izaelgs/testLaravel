@@ -36,6 +36,21 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
         Route::get('/{id}', 'ProjetoController@show');
     });
 
+    Route::prefix('cursos')->group(function() {
+        Route::get('/', 'CursoController@index');
+        Route::get('/{id}', 'CursoController@show');
+    });
+
+    Route::prefix('/areaAtuacao')->group(function() {
+        Route::get('/', 'AreaAtuacaoController@index');
+        Route::get('/{id}', 'AreaAtuacaoController@show');
+    });
+
+    Route::prefix('/areaAP')->group(function() {
+        Route::get('/', 'AreaAtuacaoProjetoController@index');
+        Route::get('/{id}', 'AreaAtuacaoProjetoController@show');
+    });
+
     Route::resource('/estudante', 'EstudanteController');
     Route::resource('/colaborador', 'ColaboradorController');
     Route::resource('/empresa', 'EmpresaController');
@@ -43,20 +58,23 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
 
     // Route::resource('/user', 'UserController');
 
-    // Route::resource('/curso', 'CursoController');
 
     // Login Required
-    Route::group(['middleware' => ['jwt.auth']], function() {
+    Route::prefix('/admin')->group(function() {
+        Route::group(['middleware' => ['jwt.auth']], function() {
 
-        Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
-        Route::resource('/areaAtuacao', 'AreaAtuacaoController');
+            Route::resource('/curso', 'CursoController');
 
-        Route::prefix('projeto')->group(function() {
-            Route::get('/{id}/estudantes', 'ProjetoController@estudantes');
-            Route::get('/{id}/colaboradoes', 'ProjetoController@colaboradoes');
-            Route::post('/', 'ProjetoController@save');
-            Route::put('/{id}', 'ProjetoController@update')->middleware('auth.basic');
+            // Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
+            // Route::resource('/areaAtuacao', 'AreaAtuacaoController');
+
+            Route::prefix('projeto')->group(function() {
+                Route::get('/{id}/estudantes', 'ProjetoController@estudantes');
+                Route::get('/{id}/colaboradoes', 'ProjetoController@colaboradoes');
+                Route::post('/', 'ProjetoController@save');
+                Route::put('/{id}', 'ProjetoController@update')->middleware('auth.basic');
+            });
+
         });
-
     });
 });
