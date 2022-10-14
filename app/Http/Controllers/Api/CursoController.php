@@ -57,18 +57,36 @@ class CursoController extends Controller
 
         try {
 
-            $curso = $this->curso->create($data, $id);
+            $curso = $this->curso->findOrFail($data, $id);
             $curso->update($data);
 
             return response()->json([
                 'data' => [
-                    'msg' => 'cadastro concluido com suseso'
+                    'msg' => 'cadastro atualizado com suseso'
                 ]
             ], 200);
         } catch (\Error $e) {
             return response()->json([
                 'error' => $e->getMessage()
             ]);
+        }
+    }
+
+    public function destroy($id) {
+
+        try {
+
+            $curso = $this->curso->findOrFail($id);
+            $curso->delete();
+
+            return response()->json([
+                'data' => [
+                    'msg' => 'cadastro removido com suseso'
+                ]
+            ], 200);
+        } catch (\Exception $e) {
+            $message = new ApiMessages($e->getMessage());
+            return response()->json($message->getMessage(), 401);
         }
     }
 }
