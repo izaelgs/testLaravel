@@ -77,8 +77,7 @@ function init_estudante(server) {
     });
   });
   form.curso.addEventListener('change', function (e) {
-    var selected = form.curso.options[form.curso.selectedIndex];
-    var periodos = selected.attributes.getAttribute('periodos');
+    var periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
     console.log(periodos);
     input_periodo.attr('max', periodos);
   });
