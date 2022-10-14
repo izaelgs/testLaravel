@@ -57,7 +57,7 @@ class CursoController extends Controller
 
         try {
 
-            $curso = $this->curso->findOrFail($data, $id);
+            $curso = $this->curso->findOrFail($id);
             $curso->update($data);
 
             return response()->json([
