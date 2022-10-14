@@ -56,7 +56,6 @@ function init_estudante(server) {
       dataType: "json"
     }).then(function (data) {
       $('#f_estudante')[0].reset();
-      console.log(data);
       appendToast('Cadastro Concluído com sucesso', 'success').then(function (element) {
         var toast = new bootstrap.Toast(element);
         toast.show();
@@ -65,7 +64,6 @@ function init_estudante(server) {
       data = data.responseJSON.errors;
       if (Object.keys(data).length) {
         for (erro in data) {
-          console.log(erro);
           document.querySelector("#".concat(erro)).classList.add('is-invalid');
         }
       } else {
@@ -78,7 +76,6 @@ function init_estudante(server) {
   });
   form.curso.addEventListener('change', function (e) {
     var periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
-    console.log(periodos);
     input_periodo.attr('max', periodos);
   });
 }

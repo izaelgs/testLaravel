@@ -35,7 +35,6 @@ function init_estudante(server) {
             dataType: "json"
         }).then(data => {
             $('#f_estudante')[0].reset();
-            console.log(data);
             appendToast('Cadastro Concluído com sucesso', 'success').then(element => {
                 const toast = new bootstrap.Toast(element);
                 toast.show();
@@ -44,7 +43,6 @@ function init_estudante(server) {
             data = data.responseJSON.errors;
             if (Object.keys(data).length) {
                 for (erro in data) {
-                    console.log(erro);
                     document.querySelector(`#${erro}`).classList.add('is-invalid');
                 }
             } else {
@@ -58,7 +56,6 @@ function init_estudante(server) {
 
     form.curso.addEventListener('change', e => {
         let periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
-        console.log(periodos);
         input_periodo.attr('max', periodos);
     });
 }

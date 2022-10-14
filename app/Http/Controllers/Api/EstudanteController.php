@@ -76,9 +76,9 @@ class EstudanteController extends Controller
             $estudante = $this->estudante->findOrFail($id);
             $estudante->update($data);
 
-            if(isset($data['projetos']) && count($data['projetos'])) {
-                $estudante->projetos()->sync($data['projetos']);
-            }
+            // if(isset($data['projetos']) && count($data['projetos'])) {
+            //     $estudante->projetos()->sync($data['projetos']);
+            // }
 
             return response()->json([
                 'data' => [

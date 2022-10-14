@@ -50,4 +50,25 @@ class CursoController extends Controller
             ]);
         }
     }
+
+    public function update(Request $request, $id) {
+
+        $data = $request->all();
+
+        try {
+
+            $curso = $this->curso->create($data, $id);
+            $curso->update($data);
+
+            return response()->json([
+                'data' => [
+                    'msg' => 'cadastro concluido com suseso'
+                ]
+            ], 200);
+        } catch (\Error $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ]);
+        }
+    }
 }
