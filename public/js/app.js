@@ -32,7 +32,7 @@ form.addEventListener('submit', function (e) {
     "projeto": form.projeto.value
   };
   $.ajax({
-    url: "http://localhost:8000/api/estudante",
+    url: "http://35.247.209.51/api/estudante",
     method: "post",
     data: data,
     dataType: "json"
@@ -56,7 +56,7 @@ input_curso.change(function (e) {
 });
 function appendOptions(input, route) {
   $.ajax({
-    url: "http://localhost:8000/api/".concat(route),
+    url: "http://35.247.209.51/api/".concat(route),
     dataType: "json"
   }).then(function (data) {
     items = data.current_page ? data.data : data;
