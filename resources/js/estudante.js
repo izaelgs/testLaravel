@@ -57,8 +57,7 @@ function init_estudante(server) {
     });
 
     form.curso.addEventListener('change', e => {
-        let selected = form.curso.options[form.curso.selectedIndex];
-        let periodos = selected.attributes.getAttribute('periodos');
+        let periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
         console.log(periodos);
         input_periodo.attr('max', periodos);
     });
