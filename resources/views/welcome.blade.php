@@ -23,29 +23,34 @@
                 <form class="row g-3" id="f_estudante">
                     <div class="col-md-6">
                         <label for="nome_completo" class="form-label">Nome Completo*</label>
-                        <input type="name" class="form-control" id="nome_completo" name="nome_completo" placeholder="Fulano de Tal">
+                        <input type="name" class="form-control"
+                            id="nome_completo" name="nome_completo" placeholder="Fulano de Tal">
                     </div>
                     <div class="col-md-6">
                         <label for="email" class="form-label">Email*</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com">
+                        <input type="email" class="form-control"
+                            id="email" name="email" placeholder="fulano@email.com">
                     </div>
                     <div class="col-12">
                         <label for="endereco" class="form-label">Endereco*</label>
-                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua do Januario 1234">
+                        <input type="text" class="form-control"
+                            id="endereco" name="endereco" placeholder="Rua do Januario 1234">
                     </div>
                     <div class="col-md-6">
                         <label for="registro_academico" class="form-label">RA (Registro Acadêmico)*</label>
-                        <input type="text" class="form-control" id="registro_academico" name="registro_academico" placeholder="9999999999">
+                        <input type="text" class="form-control"
+                            id="registro_academico" name="registro_academico" placeholder="9999999999">
                     </div>
                     <div class="col-md-6">
                         <label for="curso" class="form-label">Curso*</label>
                         <select id="curso" name="curso" class="form-select">
-                            <option hidden value="">Escolha um Curso...</option>
+                            <option hidden value="">Selecione seu Curso...</option>
                         </select>
                     </div>
                     <div class="col-md-2">
                         <label for="periodo" class="form-label">Período*</label>
-                        <input type="number" class="form-control" id="periodo" name="periodo" min="1" max="5" value="1">
+                        <input type="number" class="form-control"
+                            id="periodo" name="periodo" min="1" max="5" value="1">
                     </div>
                     <div class="col-md-10">
                         <label for="forma_integracao" class="form-label">Forma de Integração*</label>
@@ -63,7 +68,7 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="projeto" class="form-label">Projeto (Opcional)</label>
+                        <label for="projeto" class="form-label">Projeto</label>
                         <select id="projeto" name="projeto" class="form-select">
                             <option hidden value="" value="">Escolha um Projeto de Interesse...</option>
                         </select>
@@ -93,22 +98,22 @@
                 <img src="img/GOHxPB_Twister.png" alt="" class="responsive">
             </div>
             <div class="col-md-6">
-                <form class="row g-3">
+                <form class="row g-3" id="f_colaborador">
                     <div class="col-md-4">
-                        <label for="nome_completo_c" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" id="nome_completo_c" name="nome_completo" placeholder="Fulano de Tal">
+                        <label for="nome_completo" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome_completo" name="nome_completo" placeholder="Fulano de Tal">
                     </div>
                     <div class="col-md-4">
-                        <label for="email_c" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email_c" name="email" placeholder="fulano@email.com">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="fulano@email.com">
                     </div>
                     <div class="col-md-4">
                         <label for="email_profissional" class="form-label">Email Profissional</label>
                         <input type="email" class="form-control" id="email_profissional" name="email_profissional" placeholder="fulanoProfissional@email.com">
                     </div>
                     <div class="col-md-8">
-                        <label for="endereco_c" class="form-label">Endereço</label>
-                        <input type="text" class="form-control" id="endereco_c" name="endereco" placeholder="Bairro Rua tal 176">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Bairro Rua tal 176">
                     </div>
                     <div class="col-md-4">
                         <label for="telefone" class="form-label">Telefone</label>
@@ -122,7 +127,6 @@
                         <label for="inputState" class="form-label">Área</label>
                         <select id="inputState" class="form-select">
                             <option hidden value="">Escolha uma Área...</option>
-                            <option>...</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -142,28 +146,25 @@
                         <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="likedin.com/fulano.cicrano">
                     </div>
                     <div class="col-12">
-                        <label for="periodo" class="form-label">Projeto (Opcional)</label>
-                        <select id="inputState" class="form-select">
+                        <label for="projeto" class="form-label">Projeto (Opcional)</label>
+                        <select id="projeto" name="projeto" class="form-select">
                             <option hidden value="">Escolha um Projeto de Interesse...</option>
-                            <option>...</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="periodo" class="form-label">Forma de Integração</label>
-                        <select id="inputState" class="form-select">
+                        <label for="forma_integracao" class="form-label">Forma de Integração</label>
+                        <select id="forma_integracao" name="forma_integracao" class="form-select">
                             <option hidden value="">Escolha uma Forma de Integração...</option>
-                            <option>...</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="periodo" class="form-label">Área de Interesse</label>
-                        <select id="inputState" class="form-select">
+                        <label for="area_interesse" class="form-label">Área de Interesse</label>
+                        <select id="area_interesse" name="area_interesse" class="form-select">
                             <option hidden value="">Escolha uma Área...</option>
-                            <option>...</option>
                         </select>
                     </div>
                     <div class="col-12 d-grid gap-2">
-                        <button type="button" class="btn btn-secondary">Cadastrar</button>
+                        <button type="submit" class="btn btn-secondary">Cadastrar</button>
                     </div>
                 </form>
             </div>

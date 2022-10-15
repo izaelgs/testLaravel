@@ -1,8 +1,7 @@
-function init_estudante(server) {
+function init_colaborador(server) {
 
-    const form = document.querySelector('#f_estudante');
+    const form = document.querySelector('#f_colaborador');
 
-    appendOptions(form.curso, 'cursos', server);
     appendOptions(form.projeto, 'projeto', server);
     appendOptions(form.area_interesse, 'areaAP', server);
 
@@ -11,24 +10,28 @@ function init_estudante(server) {
         $('.is-invalid').removeClass('is-invalid');
 
         let data = {
-            "curso": form.curso.value,
             "nome_completo": form.nome_completo.value,
             "email": form.email.value,
             "endereco": form.endereco.value,
-            "registro_academico": form.registro_academico.value,
-            "periodo": form.periodo.value,
+            "telefone": form.telefone.value,
+            "email_profissional": form.email_profissional.value,
+            "site": form.site.value,
+            "instagram": form.instagram.value,
+            "facebook": form.facebook.value,
+            "linkedin": form.linkedin.value,
+            "responsavel": form.responsavel.value,
             "forma_integracao": form.forma_integracao.value,
             "area_interesse": form.area_interesse.value,
             "projeto": form.projeto.value
         }
 
         $.ajax({
-            url: `http://${server}/api/estudante`,
+            url: `http://${server}/api/colaborador`,
             method: "post",
             data: data,
             dataType: "json"
         }).then(data => {
-            $('#f_estudante')[0].reset();
+            $('#f_colaborador')[0].reset();
             appendToast('Cadastro Concluído com sucesso', 'success').then(element => {
                 const toast = new bootstrap.Toast(element);
                 toast.show();
@@ -36,8 +39,8 @@ function init_estudante(server) {
         }).catch(data => {
             data = data.responseJSON.errors;
             if (Object.keys(data).length) {
-                for(let erro in data) {
-                    document.querySelector(`#${erro}`).classList.add('is-invalid');
+                for (let erro in data) {
+                    form.querySelector(`#${erro}`).classList.add('is-invalid');
                 }
             } else {
                 appendToast('Algo de errado não está certo', 'danger').then(element => {
@@ -48,10 +51,6 @@ function init_estudante(server) {
         });
     });
 
-    form.curso.addEventListener('change', e => {
-        let periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
-        input_periodo.attr('max', periodos);
-    });
 }
 
 function appendOptions(input, route, server) {
@@ -102,4 +101,4 @@ function appendToast(mensagem, status, server) {
     })
 }
 
-export default init_estudante;
+export default init_colaborador;

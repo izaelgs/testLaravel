@@ -17,6 +17,7 @@ class Colaborador extends Model
         'email',
         'endereco',
         'telefone',
+        'responsavel',
         'email_profissional',
         'forma_integracao',
     ];

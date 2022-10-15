@@ -29,11 +29,7 @@ class ColaboradorRequest extends FormRequest
             'endereco' => 'required',
             'telefone' => 'required',
             'email_profissional' => 'required',
-            'site' => 'required',
-            'instagram' => 'required',
-            'facebook' => 'required',
-            'linkedin' => 'required',
-            'responsável' => 'required',
+            'responsavel' => 'required',
             'forma_integracao' => 'required',
         ];
     }
