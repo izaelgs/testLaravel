@@ -50,7 +50,8 @@ function init_estudante(server) {
 
     form.curso.addEventListener('change', e => {
         let periodos = form.curso.options[form.curso.selectedIndex].getAttribute('periodos');
-        input_periodo.attr('max', periodos);
+        form.periodo.setAttribute('max', periodos);
+        if(form.periodo.value > periodos) form.periodo.value = periodos;
     });
 }
 
