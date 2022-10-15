@@ -119,29 +119,23 @@
                         <label for="telefone" class="form-label">Telefone</label>
                         <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="(##) ####-####">
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="responsavel" class="form-label">Responsável</label>
                         <input type="name" class="form-control" id="responsavel" name="responsavel" placeholder="Representante">
                     </div>
-                    <div class="col-md-4">
-                        <label for="inputState" class="form-label">Área</label>
-                        <select id="inputState" class="form-select">
-                            <option hidden value="">Escolha uma Área...</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-6 col-md-6">
                         <label for="site" class="form-label">Site</label>
                         <input type="url" class="form-control" id="site" name="site" placeholder="site.com.br">
                     </div>
-                    <div class="col-4">
+                    <div class="col-6 col-md-4">
                         <label for="facebook" class="form-label">Facebook</label>
                         <input type="url" class="form-control" id="facebook" name="facebook" placeholder="fb.com/fulano.cicrano">
                     </div>
-                    <div class="col-4">
+                    <div class="col-6 col-md-4">
                         <label for="instagram" class="form-label">Instagram</label>
                         <input type="url" class="form-control" id="instagram" name="instagram" placeholder="instagram.com/fulano.cicrano">
                     </div>
-                    <div class="col-4">
+                    <div class="col-6 col-md-4">
                         <label for="linkedin" class="form-label">LinkedIn</label>
                         <input type="url" class="form-control" id="linkedin" name="linkedin" placeholder="likedin.com/fulano.cicrano">
                     </div>
