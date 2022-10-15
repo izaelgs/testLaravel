@@ -66,7 +66,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
             Route::resource('/curso', 'CursoController');
 
             Route::resource('/areaAP', 'AreaAtuacaoProjetoController');
-            // Route::resource('/areaAtuacao', 'AreaAtuacaoController');
+            Route::resource('/areaAtuacao', 'AreaAtuacaoController');
 
             Route::prefix('projeto')->group(function() {
                 Route::get('/{id}/estudantes', 'ProjetoController@estudantes');
