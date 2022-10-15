@@ -155,6 +155,21 @@
                         <label for="forma_integracao" class="form-label">Forma de Integração</label>
                         <select id="forma_integracao" name="forma_integracao" class="form-select">
                             <option hidden value="">Escolha uma Forma de Integração...</option>
+                            <option value="4">
+                                Voluntariado certificado - para o caso de alunos egressos
+                            </option>
+                            <option value="5">
+                                Investidor
+                            </option>
+                            <option value="6">
+                                Parceria Empresarial
+                            </option>
+                            <option value="7">
+                                Tutoria
+                            </option>
+                            <option value="8">
+                                Gestão de Projetos
+                            </option>
                         </select>
                     </div>
                     <div class="col-md-6">

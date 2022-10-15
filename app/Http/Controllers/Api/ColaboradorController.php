@@ -49,10 +49,12 @@ class ColaboradorController extends Controller
 
             $colaborador = $this->colaborador->create($data);
 
-            $colaborador->interesse()->create([
-                'area' => $data['area_interesse'],
-                'projeto_id' => $data['projeto']
-            ]);
+            if(isset($data['area_interesse']) || isset($data['projeto'])) {
+                $colaborador->interesse()->create([
+                    'area' => $data['area_interesse'],
+                    'projeto_id' => $data['projeto']
+                ]);
+            }
 
             return response()->json([
                 'data' => [
