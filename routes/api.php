@@ -56,7 +56,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
     Route::resource('/empresa', 'EmpresaController');
     Route::resource('/pessoa_fisica', 'PessoaFisicaController');
 
-    // Route::resource('/user', 'UserController');
+    Route::resource('/user', 'UserController');
 
 
     // Login Required
