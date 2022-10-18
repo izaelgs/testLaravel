@@ -1,4 +1,4 @@
-        <footer class="">
+        <footer class="" id="contato">
             <section class="container d-flex justify-content-start text-light py-4" id="sobre">
                 <div class="">
                     <h4>Contatos</h4>

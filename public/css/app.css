@@ -17,6 +17,16 @@ h1 {
     color: #82EA0F;
 }
 
+.btn-outline-success {
+    border-color: #82EA0F !important;
+    color: #82EA0F !important;
+}
+
+.btn-outline-success:hover {
+    color: rgba(26, 32, 45, 1) !important;
+    background-color: #82EA0F !important;
+}
+
 .responsive {
     max-width: 80%;
     /* height: 100vh; */
