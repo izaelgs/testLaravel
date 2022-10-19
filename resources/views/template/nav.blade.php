@@ -18,8 +18,8 @@
                         </a>
 
                         <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item text-secondary" href="#">Projetos em execução</a></li>
-                            <li><a class="dropdown-item text-secondary" href="#">Projetos concluídos</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Projetos em execução</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Projetos concluídos</a></li>
                         </ul>
                     </div>
                 </li>
@@ -30,8 +30,9 @@
                         </a>
 
                         <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item text-secondary" href="./estudante">Estudante</a></li>
-                            <li><a class="dropdown-item text-secondary" href="./colaborador">Colaborador</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="./estudante">Estudante</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="./colaborador">Colaborador</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="./proponente">Proponente</a></li>
                         </ul>
                     </div>
                 </li>

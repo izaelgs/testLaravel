@@ -14,13 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome',[
+        'pagina' => 'app'
+    ]);
 });
 
 Route::get('/estudante', function () {
-    return view('estudante');
+    return view('estudante', [
+        'pagina' => 'estudante'
+    ]);
 });
 
 Route::get('/colaborador', function () {
-    return view('colaborador');
+    return view('colaborador', [
+        'pagina' => 'colaborador'
+    ]);
+});
+
+Route::get('/proponente', function () {
+    return view('proponente', [
+        'pagina' => 'proponente'
+    ]);
 });

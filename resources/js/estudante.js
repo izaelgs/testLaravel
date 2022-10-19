@@ -1,3 +1,7 @@
+const server = '35.247.209.51';
+
+init_estudante(server);
+
 function init_estudante(server) {
 
     const form = document.querySelector('#f_estudante');

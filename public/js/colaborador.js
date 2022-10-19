@@ -41,6 +41,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+var server = '35.247.209.51';
+init_colaborador(server);
 function init_colaborador(server) {
   var form = document.querySelector('#f_colaborador');
   appendOptions(form.projeto, 'projeto', server);
