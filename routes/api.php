@@ -67,12 +67,13 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
         Route::post('/', 'PessoaFisicaController@store');
     });
 
-    Route::resource('/user', 'UserController');
 
 
     // Login Required
     Route::prefix('/admin')->group(function() {
         Route::group(['middleware' => ['jwt.auth']], function() {
+
+            Route::resource('/user', 'UserController');
 
             Route::resource('/estudante', 'EstudanteController');
             Route::resource('/colaborador', 'ColaboradorController');
