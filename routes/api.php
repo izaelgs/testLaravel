@@ -51,10 +51,21 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
         Route::get('/{id}', 'AreaAtuacaoProjetoController@show');
     });
 
-    Route::resource('/estudante', 'EstudanteController');
-    Route::resource('/colaborador', 'ColaboradorController');
-    Route::resource('/empresa', 'EmpresaController');
-    Route::resource('/pessoa_fisica', 'PessoaFisicaController');
+    Route::prefix('/estudante')->group(function() {
+        Route::post('/', 'EstudanteController@store');
+    });
+
+    Route::prefix('/colaborador')->group(function() {
+        Route::post('/', 'ColaboradorController@store');
+    });
+
+    Route::prefix('/empresa')->group(function() {
+        Route::post('/', 'EmpresaController@store');
+    });
+
+    Route::prefix('/pessoa_fisica')->group(function() {
+        Route::post('/', 'PessoaFisicaController@store');
+    });
 
     Route::resource('/user', 'UserController');
 
@@ -62,6 +73,11 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
     // Login Required
     Route::prefix('/admin')->group(function() {
         Route::group(['middleware' => ['jwt.auth']], function() {
+
+            Route::resource('/estudante', 'EstudanteController');
+            Route::resource('/colaborador', 'ColaboradorController');
+            Route::resource('/empresa', 'EmpresaController');
+            Route::resource('/pessoa_fisica', 'PessoaFisicaController');
 
             Route::resource('/curso', 'CursoController');
 
