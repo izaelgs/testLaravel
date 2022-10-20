@@ -10,6 +10,10 @@ main {
     min-height: 85vh;
 }
 
+form {
+    margin-bottom: 26px;
+}
+
 footer {
     background-color: #161B26;
     bottom: 0;
