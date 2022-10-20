@@ -15,15 +15,12 @@ class CreatePessoasFisicas extends Migration
     {
         Schema::create('pessoas_fisicas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area')
-                ->constrained('area_atuacao')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-            $table->string('nome_contato');
-            $table->tinyInteger('tipo_empresa');
-            $table->string('endereco');
+            $table->string('nome_completo');
+            $table->string('cpf');
             $table->string('telefone');
+            $table->string('nome_contato');
             $table->string('email');
+            $table->string('endereco');
             $table->timestamps();
         });
     }

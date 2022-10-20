@@ -45,9 +45,7 @@ var server = '35.247.209.51';
 init_colaborador(server);
 function init_colaborador(server) {
   var form = document.querySelector('#f_proponente');
-  form.area.forEach(function (area) {
-    appendOptions(area, 'areaAtuacao', server);
-  });
+  appendOptions(form.area, 'areaAtuacao', server);
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     $('.is-invalid').removeClass('is-invalid');

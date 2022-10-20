@@ -43,21 +43,13 @@
                 </div>
                 <fieldset class="form-group pt-2 hidden" hiddenable pessoa_fisica disabled>
                     <div class="row">
-                        <div class="col-md-6">
-                            <label for="tipo_empresa" class="form-label">Tipo de Empresa</label>
-                            <select id="tipo_empresa" name="tipo_empresa" class="form-control form-select">
-                                <option hidden value="">Escolha um Tipo de Empresa</option>
-                                <option value="1">Empresinha</option>
-                                <option value="2">Empresa</option>
-                                <option value="3">Empresona</option>
-                                <option value="4">Outro</option>
-                            </select>
+                        <div class="col-md-8">
+                            <label for="nome_completo" class="form-label">Nome Completo</label>
+                            <input type="text" class="form-control" id="nome_completo" name="nome_completo" placeholder="Fulano de Tal">
                         </div>
-                        <div class="col-md-6">
-                            <label for="tipo" class="form-label">Area de Atuação</label>
-                            <select id="area" name="area" class="form-control form-select">
-                                <option hidden value="">Escolha uma Area de Atuação</option>
-                            </select>
+                        <div class="col-md-4">
+                            <label for="cpf" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="cpf" name="cpf" placeholder="00000000000">
                         </div>
                     </div>
                 </fieldset>

@@ -24,12 +24,14 @@ class PessoaFisicaRequest extends FormRequest
     public function rules()
     {
         return [
-            'tipo_empresa'=> 'required',
+            'nome_completo'=> 'required',
+            'cpf'=> 'required',
             'telefone'=> 'required',
-            'contato'=> 'required',
             'nome_contato'=> 'required',
-            'endereco'=> 'required',
             'email'=> 'required',
+            'endereco'=> 'required',
+            'app'=> 'required',
+            'contato'=> 'required',
         ];
     }
 }

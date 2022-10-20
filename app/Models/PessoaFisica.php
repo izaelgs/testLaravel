@@ -12,13 +12,12 @@ class PessoaFisica extends Model
     protected $table = 'pessoas_fisicas';
 
     protected $fillable = [
-        'area',
-        'email',
-        'endereco',
-        'id',
-        'nome_contato',
+        'nome_completo',
+        'cpf',
         'telefone',
-        'tipo_empresa'
+        'nome_contato',
+        'email',
+        'endereco'
     ];
 
     function areaAtuacao() {

@@ -7,9 +7,7 @@ function init_colaborador(server) {
 
     const form = document.querySelector('#f_proponente');
 
-    form.area.forEach(area => {
-        appendOptions(area, 'areaAtuacao', server);
-    })
+    appendOptions(form.area, 'areaAtuacao', server);
 
     form.addEventListener('submit', e => {
         e.preventDefault();
