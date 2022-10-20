@@ -32,7 +32,7 @@
                     <legend class="col-form-label col-4 pt-0">Cadastrar como</legend>
                     <div class="col-8 d-flex justify-content-around align-items-center">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="form-type" type="radio" id="inlineRadio1" value="empresa" form-type checked>
+                            <input class="form-check-input" name="form-type" type="radio" id="inlineRadio1" value="empresa" form-type>
                             <label class="form-check-label" for="inlineRadio1">Empresa</label>
                         </div>
                         <div class="form-check form-check-inline">
@@ -57,10 +57,6 @@
                             <label for="tipo" class="form-label">Area de Atuação</label>
                             <select id="area" name="area" class="form-control form-select">
                                 <option hidden value="">Escolha uma Area de Atuação</option>
-                                <<option value="1">Clonagem de Cartão</option>
-                                    <option value="2">TikTok</option>
-                                    <option value="3">NFT</option>
-                                    <option value="4">Outro</option>
                             </select>
                         </div>
                     </div>
@@ -89,10 +85,6 @@
                             <label for="tipo" class="form-label">Area de Atuação</label>
                             <select id="area" name="area" class="form-control form-select">
                                 <option hidden value="">Escolha uma Area de Atuação</option>
-                                <<option value="1">Clonagem de Cartão</option>
-                                    <option value="2">TikTok</option>
-                                    <option value="3">NFT</option>
-                                    <option value="4">Outro</option>
                             </select>
                         </div>
                         <div class="col-6 col-md-8">

@@ -45,6 +45,9 @@ var server = '35.247.209.51';
 init_colaborador(server);
 function init_colaborador(server) {
   var form = document.querySelector('#f_proponente');
+  form.area.forEach(function (area) {
+    appendOptions(area, 'areaAtuacao', server);
+  });
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     $('.is-invalid').removeClass('is-invalid');
@@ -67,6 +70,7 @@ function init_colaborador(server) {
       dataType: "json"
     }).then(function (data) {
       $('#f_proponente')[0].reset();
+      $('[name="form-type"]').val(type);
       appendToast('Cadastro Concluído com sucesso', 'success').then(function (element) {
         var toast = new bootstrap.Toast(element);
         toast.show();
@@ -93,6 +97,21 @@ $('[name="form-type"]').change(function (e) {
   $("[".concat(e.target.value, "]")).prop("disabled", false);
   $("[".concat(e.target.value, "]")).removeClass("hidden");
 });
+function appendOptions(input, route, server) {
+  $.ajax({
+    url: "http://".concat(server, "/api/").concat(route),
+    dataType: "json"
+  }).then(function (data) {
+    var items = data.current_page ? data.data : data;
+    items.forEach(function (item) {
+      var option = document.createElement('option');
+      option.value = item.id;
+      option.append(item.titulo);
+      if (item.periodos) option.setAttribute('periodos', item.periodos);
+      input.append(option);
+    });
+  });
+}
 function appendToast(mensagem, status, server) {
   return new Promise(function (resolve, reject) {
     var toast = document.createElement('div');

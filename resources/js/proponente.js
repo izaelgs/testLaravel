@@ -7,6 +7,10 @@ function init_colaborador(server) {
 
     const form = document.querySelector('#f_proponente');
 
+    form.area.forEach(area => {
+        appendOptions(area, 'areaAtuacao', server);
+    })
+
     form.addEventListener('submit', e => {
         e.preventDefault();
         $('.is-invalid').removeClass('is-invalid');
@@ -32,6 +36,7 @@ function init_colaborador(server) {
             dataType: "json"
         }).then(data => {
             $('#f_proponente')[0].reset();
+            $('[name="form-type"]').val(type);
             appendToast('Cadastro Concluído com sucesso', 'success').then(element => {
                 const toast = new bootstrap.Toast(element);
                 toast.show();
@@ -61,6 +66,27 @@ $('[name="form-type"]').change(function(e) {
     $(`[${e.target.value}]`).prop( "disabled", false );
     $(`[${e.target.value}]`).removeClass( "hidden");
 });
+
+function appendOptions(input, route, server) {
+    $.ajax({
+        url: `http://${server}/api/${route}`,
+        dataType: "json"
+    }).then(data => {
+        let items = data.current_page ? data.data : data;
+
+        items.forEach(item => {
+
+            let option = document.createElement('option');
+
+            option.value = item.id;
+            option.append(item.titulo);
+            if (item.periodos) option.setAttribute('periodos', item.periodos);
+
+            input.append(option);
+        });
+    });
+
+}
 
 function appendToast(mensagem, status, server) {
 
