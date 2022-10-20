@@ -68,7 +68,7 @@ function init_colaborador(server) {
       dataType: "json"
     }).then(function (data) {
       $('#f_proponente')[0].reset();
-      $('[name="form-type"]').val(type);
+      // $('[name="form-type"]').val(type);
       appendToast('Cadastro Concluído com sucesso', 'success').then(function (element) {
         var toast = new bootstrap.Toast(element);
         toast.show();

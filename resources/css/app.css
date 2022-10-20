@@ -29,6 +29,7 @@ h1 {
 
 .responsive {
     max-width: 80%;
+    max-height: 80vh;
     /* height: 100vh; */
 }
 
