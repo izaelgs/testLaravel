@@ -44,8 +44,8 @@
                 <fieldset class="form-group pt-2 hidden" hiddenable pessoa_fisica disabled>
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="tipo" class="form-label">Tipo de Empresa</label>
-                            <select id="tipo" name="tipo" class="form-control form-select">
+                            <label for="tipo_empresa" class="form-label">Tipo de Empresa</label>
+                            <select id="tipo_empresa" name="tipo_empresa" class="form-control form-select">
                                 <option hidden value="">Escolha um Tipo de Empresa</option>
                                 <option value="1">Empresinha</option>
                                 <option value="2">Empresa</option>
@@ -76,8 +76,8 @@
                             <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
                         </div>
                         <div class="col-md-4">
-                            <label for="tipo" class="form-label">Tipo de Empresa</label>
-                            <select id="tipo" name="tipo" class="form-control form-select">
+                            <label for="tipo_empresa" class="form-label">Tipo de Empresa</label>
+                            <select id="tipo_empresa" name="tipo_empresa" class="form-control form-select">
                                 <option hidden value="">Escolha um Tipo de Empresa</option>
                                 <option value="1">Empresinha</option>
                                 <option value="2">Empresa</option>

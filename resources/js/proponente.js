@@ -20,7 +20,7 @@ function init_colaborador(server) {
             }
         });
 
-        console.log(type);
+        // console.log(type);
 
         $.ajax({
             url: `http://${server}/api/${type}`,
@@ -37,7 +37,8 @@ function init_colaborador(server) {
             data = data.responseJSON.errors;
             if (Object.keys(data).length) {
                 for (let erro in data) {
-                    form.querySelector(`#${erro}`).classList.add('is-invalid');
+                    console.log(erro)
+                    $(`[name="${erro}"`).addClass('is-invalid');
                 }
             } else {
                 appendToast('Algo de errado não está certo', 'danger').then(element => {

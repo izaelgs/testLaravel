@@ -56,7 +56,9 @@ function init_colaborador(server) {
         data[n['name']] = n['value'];
       }
     });
-    console.log(type);
+
+    // console.log(type);
+
     $.ajax({
       url: "http://".concat(server, "/api/").concat(type),
       method: "post",
@@ -72,7 +74,8 @@ function init_colaborador(server) {
       data = data.responseJSON.errors;
       if (Object.keys(data).length) {
         for (var erro in data) {
-          form.querySelector("#".concat(erro)).classList.add('is-invalid');
+          console.log(erro);
+          $("[name=\"".concat(erro, "\"")).addClass('is-invalid');
         }
       } else {
         appendToast('Algo de errado não está certo', 'danger').then(function (element) {
