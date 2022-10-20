@@ -50,7 +50,6 @@ class EmpresaController extends Controller
 
             $empresa = $this->empresa->create($data);
             $empresa->proponente()->create([
-                'area' => $data['area_projeto'],
                 'app' => $data['app'],
                 'contato' => $data['contato'],
             ]);
