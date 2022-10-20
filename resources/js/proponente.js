@@ -5,38 +5,30 @@ init_colaborador(server);
 
 function init_colaborador(server) {
 
-    const form = document.querySelector('#f_colaborador');
-
-    appendOptions(form.projeto, 'projeto', server);
-    appendOptions(form.area_interesse, 'areaAP', server);
+    const form = document.querySelector('#f_proponente');
 
     form.addEventListener('submit', e => {
         e.preventDefault();
         $('.is-invalid').removeClass('is-invalid');
 
-        let data = {
-            "nome_completo": form.nome_completo.value,
-            "email": form.email.value,
-            "endereco": form.endereco.value,
-            "telefone": form.telefone.value,
-            "email_profissional": form.email_profissional.value,
-            "site": form.site.value,
-            "instagram": form.instagram.value,
-            "facebook": form.facebook.value,
-            "linkedin": form.linkedin.value,
-            "responsavel": form.responsavel.value,
-            "forma_integracao": form.forma_integracao.value,
-            "area_interesse": form.area_interesse.value,
-            "projeto": form.projeto.value
-        }
+        let type = $('[name="form-type"]').val();
+        let campos = $('#f_proponente').serializeArray();
+        let data = {};
+        $.map(campos, function(n, i){
+            if(n['name'] !== 'form-type'){
+                data[n['name']] = n['value'];
+            }
+        });
+
+        console.log(type);
 
         $.ajax({
-            url: `http://${server}/api/colaborador`,
+            url: `http://${server}/api/${type}`,
             method: "post",
             data: data,
             dataType: "json"
         }).then(data => {
-            $('#f_colaborador')[0].reset();
+            $('#f_proponente')[0].reset();
             appendToast('Cadastro Concluído com sucesso', 'success').then(element => {
                 const toast = new bootstrap.Toast(element);
                 toast.show();
@@ -58,26 +50,15 @@ function init_colaborador(server) {
 
 }
 
-function appendOptions(input, route, server) {
-    $.ajax({
-        url: `http://${server}/api/${route}`,
-        dataType: "json"
-    }).then(data => {
-        let items = data.current_page ? data.data : data;
+$('[name="form-type"]').change(function(e) {
+    let hiddenables = $('[hiddenable]');
+    hiddenables.prop( "disabled", true );
+    hiddenables.addClass( "hidden");
 
-        items.forEach(item => {
-
-            let option = document.createElement('option');
-
-            option.value = item.id;
-            option.append(item.titulo);
-            if (item.periodos) option.setAttribute('periodos', item.periodos);
-
-            input.append(option);
-        });
-    });
-
-}
+    $(`[${e.target.value}]`).prop( "disabled", false );
+    $(`[${e.target.value}]`).removeClass( "hidden");
+    console.log($(`[${e.target.value}]`));
+});
 
 function appendToast(mensagem, status, server) {
 

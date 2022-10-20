@@ -49,7 +49,6 @@ class pessoaFisicaController extends Controller
 
             $pessoa = $this->pessoa->create($data);
             $pessoa->proponente()->create([
-                'area' => $data['area_projeto'],
                 'app' => $data['app'],
                 'contato' => $data['contato'],
             ]);

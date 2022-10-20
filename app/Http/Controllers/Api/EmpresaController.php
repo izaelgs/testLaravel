@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\EmpresaRequest;
 use App\Models\Empresa;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class EmpresaController extends Controller
 
     }
 
-    public function store(Request $request) {
+    public function store(EmpresaRequest $request) {
 
         $data = $request->all();
 

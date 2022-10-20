@@ -44,34 +44,26 @@ __webpack_require__.r(__webpack_exports__);
 var server = '35.247.209.51';
 init_colaborador(server);
 function init_colaborador(server) {
-  var form = document.querySelector('#f_colaborador');
-  appendOptions(form.projeto, 'projeto', server);
-  appendOptions(form.area_interesse, 'areaAP', server);
+  var form = document.querySelector('#f_proponente');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     $('.is-invalid').removeClass('is-invalid');
-    var data = {
-      "nome_completo": form.nome_completo.value,
-      "email": form.email.value,
-      "endereco": form.endereco.value,
-      "telefone": form.telefone.value,
-      "email_profissional": form.email_profissional.value,
-      "site": form.site.value,
-      "instagram": form.instagram.value,
-      "facebook": form.facebook.value,
-      "linkedin": form.linkedin.value,
-      "responsavel": form.responsavel.value,
-      "forma_integracao": form.forma_integracao.value,
-      "area_interesse": form.area_interesse.value,
-      "projeto": form.projeto.value
-    };
+    var type = $('[name="form-type"]').val();
+    var campos = $('#f_proponente').serializeArray();
+    var data = {};
+    $.map(campos, function (n, i) {
+      if (n['name'] !== 'form-type') {
+        data[n['name']] = n['value'];
+      }
+    });
+    console.log(type);
     $.ajax({
-      url: "http://".concat(server, "/api/colaborador"),
+      url: "http://".concat(server, "/api/").concat(type),
       method: "post",
       data: data,
       dataType: "json"
     }).then(function (data) {
-      $('#f_colaborador')[0].reset();
+      $('#f_proponente')[0].reset();
       appendToast('Cadastro Concluído com sucesso', 'success').then(function (element) {
         var toast = new bootstrap.Toast(element);
         toast.show();
@@ -91,21 +83,14 @@ function init_colaborador(server) {
     });
   });
 }
-function appendOptions(input, route, server) {
-  $.ajax({
-    url: "http://".concat(server, "/api/").concat(route),
-    dataType: "json"
-  }).then(function (data) {
-    var items = data.current_page ? data.data : data;
-    items.forEach(function (item) {
-      var option = document.createElement('option');
-      option.value = item.id;
-      option.append(item.titulo);
-      if (item.periodos) option.setAttribute('periodos', item.periodos);
-      input.append(option);
-    });
-  });
-}
+$('[name="form-type"]').change(function (e) {
+  var hiddenables = $('[hiddenable]');
+  hiddenables.prop("disabled", true);
+  hiddenables.addClass("hidden");
+  $("[".concat(e.target.value, "]")).prop("disabled", false);
+  $("[".concat(e.target.value, "]")).removeClass("hidden");
+  console.log($("[".concat(e.target.value, "]")));
+});
 function appendToast(mensagem, status, server) {
   return new Promise(function (resolve, reject) {
     var toast = document.createElement('div');

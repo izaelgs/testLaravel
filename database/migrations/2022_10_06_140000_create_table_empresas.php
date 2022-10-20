@@ -22,7 +22,7 @@ class CreateTableEmpresas extends Migration
                 ->onDelete('cascade');
             $table->string('razao_social');
             $table->string('cnpj');
-            $table->tinyInteger('tipo');
+            $table->tinyInteger('tipo_empresa');
             $table->string('telefone');
             $table->string('nome_contato');
             $table->string('endereco');

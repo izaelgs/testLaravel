@@ -13,7 +13,7 @@ class Empresa extends Model
         'area',
         'razao_social',
         'cnpj',
-        'tipo',
+        'tipo_empresa',
         'telefone',
         'nome_contato',
         'endereco',

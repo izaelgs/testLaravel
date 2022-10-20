@@ -15,10 +15,10 @@ class CreateTableProponentes extends Migration
     {
         Schema::create('proponentes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('area')
-                ->constrained('area_atuacao_projetos')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            // $table->foreignId('area')
+            //     ->constrained('area_atuacao_projetos')
+            //     ->onUpdate('cascade')
+            //     ->onDelete('cascade');
             $table->foreignId('empresa_id')
                 ->nullable()
                 ->constrained('empresas')
