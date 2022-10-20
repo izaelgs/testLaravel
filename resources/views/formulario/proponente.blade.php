@@ -55,7 +55,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="tipo" class="form-label">Area de Atuação</label>
-                            <select id="area_interesse" name="area_interesse" class="form-control form-select">
+                            <select id="area" name="area" class="form-control form-select">
                                 <option hidden value="">Escolha uma Area de Atuação</option>
                                 <<option value="1">Clonagem de Cartão</option>
                                     <option value="2">TikTok</option>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-md-4">
                             <label for="tipo" class="form-label">Area de Atuação</label>
-                            <select id="area_interesse" name="area_interesse" class="form-control form-select">
+                            <select id="area" name="area" class="form-control form-select">
                                 <option hidden value="">Escolha uma Area de Atuação</option>
                                 <<option value="1">Clonagem de Cartão</option>
                                     <option value="2">TikTok</option>
@@ -156,9 +156,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="row d-flex justify-content-center align-items-center align-self-center">
-                                <label for="area_interesse" class="col-sm-4 col-form-label">Forma de Contato</label>
+                                <label for="contato" class="col-sm-4 col-form-label">Forma de Contato</label>
                                 <div class="col-sm-8">
-                                    <select id="area_interesse" name="area_interesse" class="form-control form-select">
+                                    <select id="contato" name="contato" class="form-control form-select">
                                         <option hidden value="">Escolha uma Forma de Contato...</option>
                                         <option value="1">Telefone</option>
                                         <option value="2">E-mail</option>
