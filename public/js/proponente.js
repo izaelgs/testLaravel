@@ -54,11 +54,12 @@ function init_colaborador(server) {
     $.map(campos, function (n, i) {
       if (n['name'] !== 'form-type') {
         data[n['name']] = n['value'];
+      } else {
+        type = n['value'];
+        console.log(n['value']);
       }
     });
-
-    // console.log(type);
-
+    console.log(type);
     $.ajax({
       url: "http://".concat(server, "/api/").concat(type),
       method: "post",
@@ -74,7 +75,6 @@ function init_colaborador(server) {
       data = data.responseJSON.errors;
       if (Object.keys(data).length) {
         for (var erro in data) {
-          console.log(erro);
           $("[name=\"".concat(erro, "\"")).addClass('is-invalid');
         }
       } else {
@@ -92,7 +92,6 @@ $('[name="form-type"]').change(function (e) {
   hiddenables.addClass("hidden");
   $("[".concat(e.target.value, "]")).prop("disabled", false);
   $("[".concat(e.target.value, "]")).removeClass("hidden");
-  console.log($("[".concat(e.target.value, "]")));
 });
 function appendToast(mensagem, status, server) {
   return new Promise(function (resolve, reject) {

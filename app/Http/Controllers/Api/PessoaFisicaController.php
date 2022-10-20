@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PessoaFisicaRequest;
 use App\Models\PessoaFisica;
 use Illuminate\Http\Request;
 
@@ -41,7 +42,7 @@ class pessoaFisicaController extends Controller
 
     }
 
-    public function store(Request $request) {
+    public function store(PessoaFisicaRequest $request) {
 
         $data = $request->all();
 
