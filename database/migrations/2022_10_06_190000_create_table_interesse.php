@@ -26,6 +26,7 @@ class CreateTableInteresse extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreignId('projeto_id')
+                ->nullable()
                 ->constrained('projetos')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
