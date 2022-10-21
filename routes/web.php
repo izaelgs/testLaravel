@@ -1,6 +1,10 @@
 <?php
 
+use App\Mail\newUnitech;
+use App\Models\Estudante;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,13 @@ Route::get('/', function () {
     return view('welcome',[
         'pagina' => 'app'
     ]);
+});
+
+Route::get('testemail', function () {
+    $user = User::findOrFail(1);
+    $estudante = Estudante::findOrFail(1)->getAttributes();
+    // return new newUnitech($user, $estudante);
+    Mail::send(new newUnitech($user, $estudante, 'teste'));
 });
 
 Route::get('/estudante', function () {
