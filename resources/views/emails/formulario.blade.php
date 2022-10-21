@@ -1,6 +1,6 @@
 @component('mail::message')
 <h1>Teste de Inscrição</h1>
-<p>{{ $dados->nome_completo ?? $dados->razao_social ?? 'alguem'}} acaba de se inscrever como {{ $metodo }} com esses dados pessoais além de fotos frente e verso do cartão</p>
+<p>{{ $dados->nome_completo ?? $dados->razao_social ?? 'alguem'}} acaba de se inscrever como {{ $metodo }} com os dados pessoais abaixo além de fotos frente e verso do cartão</p>
 @component('mail::table')
 <table>
     @foreach ($dados as $key => $value)

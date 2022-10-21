@@ -69,13 +69,14 @@ class EstudanteController extends Controller
                 'curso' => $estudante->cursos->titulo,
                 'periodo' => $estudante->periodo,
                 'registro_academico' => $estudante->registro_academico,
+                'projeto' => $estudante->interesse()->first()->projeto->titulo,
                 'forma_integracao' => $estudante->forma_integracao,
                 'updated_at' => $estudante->updated_at,
                 'created_at' => $estudante->created_at,
                 'id' => $estudante->id,
 
             ];
-            Mail::send(new newUnitech($user, $dados, 'estudante'));
+            Mail::send(new newUnitech($user, $dados, 'Estudante'));
 
             return response()->json([
                 'data' => [

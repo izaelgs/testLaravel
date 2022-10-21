@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EmpresaRequest;
+use App\Mail\newUnitech;
 use App\Models\Empresa;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EmpresaController extends Controller
 {
@@ -53,6 +56,10 @@ class EmpresaController extends Controller
                 'app' => $data['app'],
                 'contato' => $data['contato'],
             ]);
+
+            $user = User::findOrFail(1);
+
+            Mail::send(new newUnitech($user, $empresa->getAttributes(), 'Proponente Empresa'));
 
             return response()->json([
                 'data' => [

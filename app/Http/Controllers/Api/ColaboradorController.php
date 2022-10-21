@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Api;
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ColaboradorRequest;
+use App\Mail\newUnitech;
 use App\Models\Colaborador;
+use App\Models\User;
+use Illuminate\Support\Facades\Mail;
 
 class ColaboradorController extends Controller
 {
@@ -55,6 +58,24 @@ class ColaboradorController extends Controller
                     'projeto_id' => $data['projeto']
                 ]);
             }
+
+            $user = User::findOrFail(1);
+
+            $dados = [
+                'nome_completo' => $colaborador->nome_completo,
+                'email' => $colaborador->email,
+                'endereco' => $colaborador->endereco,
+                'telefone' => $colaborador->telefone,
+                'email_profissional' => $colaborador->email_profissional,
+                'responsavel' => $colaborador->responsavel,
+                'projeto' => $colaborador->interesse()->first()->projeto->titulo,
+                'forma_integracao' => $colaborador->forma_integracao,
+                'updated_at' => $colaborador->updated_at,
+                'created_at' => $colaborador->created_at,
+                'id' => $colaborador->id,
+
+            ];
+            Mail::send(new newUnitech($user, $dados, 'Colaborador'));
 
             return response()->json([
                 'data' => [
