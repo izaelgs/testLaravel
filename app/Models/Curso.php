@@ -13,4 +13,8 @@ class Curso extends Model
         'titulo',
         'periodos'
     ];
+
+    function estudante() {
+        return $this->hasMany(Estudante::class);
+    }
 }

@@ -19,7 +19,7 @@ class Estudante extends Model
         'forma_integracao'
     ];
 
-    function curso() {
+    function cursos() {
         return $this->belongsTo(Curso::class, 'curso');
     }
 

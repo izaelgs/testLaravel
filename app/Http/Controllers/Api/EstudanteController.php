@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Api\ApiMessages;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EstudanteRequest;
+use App\Http\Resources\EstudanteResource;
 use App\Mail\newUnitech;
 use App\Models\Estudante;
 use App\Models\User;
@@ -60,7 +61,21 @@ class EstudanteController extends Controller
             }
 
             $user = User::findOrFail(1);
-            Mail::send(new newUnitech($user, $estudante->getAttributes(), 'estudante'));
+
+            $dados = [
+                'nome_completo' => $estudante->nome_completo,
+                'email' => $estudante->email,
+                'endereco' => $estudante->endereco,
+                'curso' => $estudante->cursos->titulo,
+                'periodo' => $estudante->periodo,
+                'registro_academico' => $estudante->registro_academico,
+                'forma_integracao' => $estudante->forma_integracao,
+                'updated_at' => $estudante->updated_at,
+                'created_at' => $estudante->created_at,
+                'id' => $estudante->id,
+
+            ];
+            Mail::send(new newUnitech($user, $dados, 'estudante'));
 
             return response()->json([
                 'data' => [

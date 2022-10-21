@@ -38,7 +38,7 @@ class newUnitech extends Mailable
         $this->subject("$this->metodo - Nova Inscrição");
         $this->to($this->user->email, $this->user->name);
 
-        return $this->markdown('emails.estudante', [
+        return $this->markdown('emails.formulario', [
             'user' => $this->user,
             'dados' => $this->dados,
             'metodo' => $this->metodo,
