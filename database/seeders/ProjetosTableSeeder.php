@@ -14,46 +14,48 @@ class ProjetosTableSeeder extends Seeder
      */
     public function run()
     {
-        $projeto = Projeto::insert(
-        ['titulo' => 'Website',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Agendamento de Laboratorio e Notebook',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Brainstorm para Software de Biciletário - Shopping Boulevard',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Biomonitoramento - IEMA',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Ensalamento',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Fresadora com furadeira - Madeira',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Fliperama',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Óculos 3D',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Psicologia',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
-        ],
-        ['titulo' => 'Quiz acadêmico',
-        'descricao' => 'Primeiro Projeto',
-        'area' => 1
+        $projeto = Projeto::insert([
+            [
+            'titulo' => 'Website',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Agendamento de Laboratorio e Notebook',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Brainstorm para Software de Biciletário - Shopping Boulevard',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Biomonitoramento - IEMA',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Ensalamento',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Fresadora com furadeira - Madeira',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Fliperama',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Óculos 3D',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Psicologia',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ],
+            ['titulo' => 'Quiz acadêmico',
+            'descricao' => 'Primeiro Projeto',
+            'area' => 1
+            ]
         ]);
     }
 }
