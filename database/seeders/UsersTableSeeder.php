@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'Izael Gonçalves da Silva',
-            'email' => 'izael-123@outlook.com',
+            'name' => 'Unitech Admin',
+            'email' => 'UNITECH-RedesSociais@souunisales.com.br',
             'password' => bcrypt('senha'),
         ]);
     }
