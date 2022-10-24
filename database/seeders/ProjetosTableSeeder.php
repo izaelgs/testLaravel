@@ -14,7 +14,7 @@ class ProjetosTableSeeder extends Seeder
      */
     public function run()
     {
-        $projeto = Projeto::create(
+        $projeto = Projeto::insert(
         ['titulo' => 'Website',
         'descricao' => 'Primeiro Projeto',
         'area' => 1
