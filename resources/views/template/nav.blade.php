@@ -37,6 +37,17 @@
                     </div>
                 </li>
                 <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="btn text-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Vagas
+                        </a>
+
+                        <ul class="dropdown-menu bg-dark">
+                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Estágio</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Emprego</a></li>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link active text-secondary" aria-current="page" href="#contato">Contatos</a>
                 </li>
             </ul>
