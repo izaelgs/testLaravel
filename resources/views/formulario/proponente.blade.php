@@ -1,6 +1,6 @@
 <section class="inscricao mb-2 rounded" id="proponente">
     <h2>Faça sua Proposta</h2>
-    <p>Suspendisse facilisis venenatis libero eu euismod. Etiam sed libero sit amet diam posuere tincidunt vitae sit amet nulla. Nullam pellentesque mollis purus. Proin quis leo ut felis suscipit scelerisque. Nulla ac metus nulla. Maecenas ac nisl ut enim fringilla sagittis. Phasellus quis nulla ex. Aenean in massa id magna consequat facilisis quis nec lacus. Maecenas molestie sollicitudin nisi, vel hendrerit tortor convallis a.</p>
+    <p> Você tem uma ideia e quer transformá-la em realidade, conte com a nossa equipe Unitech.</p>
     <div class="row d-flex align-items-center">
         <form class="row g-3" id="f_proponente">
             <div class="row d-flex justify-content-center align-items-center align-self-center">
