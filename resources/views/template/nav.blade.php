@@ -43,8 +43,8 @@
                         </a>
 
                         <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Estágio</a></li>
-                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Emprego</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="/vagas-estagio">Estágio</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="/vagas-emprego">Emprego</a></li>
                     </div>
                 </li>
                 <li class="nav-item">

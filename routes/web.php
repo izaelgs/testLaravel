@@ -47,3 +47,15 @@ Route::get('/proponente', function () {
         'pagina' => 'proponente'
     ]);
 });
+
+Route::get('/vagas-estagio', function () {
+    return view('vagas.vagas', [
+        'pagina' => 'app'
+    ]);
+});
+
+Route::get('/vagas-emprego', function () {
+    return view('vagas.vagas', [
+        'pagina' => 'app'
+    ]);
+});
