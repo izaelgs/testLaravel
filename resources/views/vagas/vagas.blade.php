@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Pessoa Trainee - Segurança da Informação</h5>
                         <p class="card-text">Vila Velha -ES</p>
-                        <a href="https://lnkd.in/dSHg_srb" class="btn btn-primary">Tenho Interesse</a>
+                        <a href="https://lnkd.in/dSHg_srb" target="_blank" class="btn btn-primary">Tenho Interesse</a>
                     </div>
                 </div>
             </div>
