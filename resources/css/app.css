@@ -52,6 +52,10 @@ h1 {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 234, 15, 0.6) !important;
 }
 
+.form-check-input {
+    cursor: pointer;
+}
+
 select:focus {
     border-color: #82EA0F !important;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(130, 234, 15, 0.6) !important;
@@ -59,4 +63,24 @@ select:focus {
 
 .teste {
     color: #161B26;
+}
+
+.vaga-img {
+    height: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.vaga-img:hover {
+    transform: scale(1.15);
+    z-index: 10;
+    background-size: contain;
+    /* height: auto !important; */
+}
+
+.card {
+    height: 60vh !important;
+    transition: 0.4s;
 }
