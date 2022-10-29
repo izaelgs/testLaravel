@@ -17,6 +17,7 @@ class CreateTableCursos extends Migration
             $table->id();
             $table->string('titulo');
             $table->tinyInteger('periodos');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

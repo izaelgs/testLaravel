@@ -21,6 +21,7 @@ class CreateTableProjetos extends Migration
                 ->onDelete('cascade');
             $table->string('titulo');
             $table->text('descricao');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

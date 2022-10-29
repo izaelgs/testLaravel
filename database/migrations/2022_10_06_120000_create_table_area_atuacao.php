@@ -16,6 +16,7 @@ class CreateTableAreaAtuacao extends Migration
         Schema::create('area_atuacao', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
