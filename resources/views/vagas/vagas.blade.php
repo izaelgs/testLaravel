@@ -22,46 +22,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 p-0 pb-4">
-                <div class="card bg-dark">
-                    <div class="vaga-img mx-2 my-4" style="background-image: url('/img/GOHxPB_Apple.png');"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Pronome Neutrer</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Tenho Interesse</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-0 pb-4">
-                <div class="card bg-dark">
-                    <div class="vaga-img mx-2 my-4" style="background-image: url('/img/GOHxPB_Balloon_BG.png');"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Engenheiro Estratégico em Free Fire</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary text-left">Tenho Interesse</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-0 pb-4">
-                <div class="card bg-dark">
-                    <div class="vaga-img mx-2 my-4" style="background-image: url('/img/GOHxPB_Twister.png');"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">TikToker</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Tenho Interesse</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 p-0 pb-4">
-                <div class="card bg-dark">
-                    <div class="vaga-img mx-2 my-4" style="background-image: url('/img/GOHxPB_Apple.png');"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Escreva Um Titulo</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Tenho Interesse</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </main>
