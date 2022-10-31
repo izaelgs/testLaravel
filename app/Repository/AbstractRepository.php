@@ -22,7 +22,11 @@ abstract class AbstractRepository
 
         foreach($expressions as $e) {
             $exp = explode(':', $e);
-            $this->model = $this->model->where($exp[0], $exp[1], $exp[2]);
+            if(count($exp) > 2) {
+                $this->model = $this->model->where($exp[0], $exp[1], $exp[2]);
+            } else {
+                $this->model = $this->model->where([$exp[0] => $exp[1] ?? NULL]);
+            }
         }
 
     }

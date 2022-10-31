@@ -10,7 +10,7 @@ class Projeto extends Model
     use HasFactory;
 
     protected $fillable = [
-        'titulo', 'descricao', 'area'
+        'titulo', 'descricao', 'area', 'disabled_at'
     ];
 
     function areaAtuacao() {

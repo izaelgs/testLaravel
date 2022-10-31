@@ -21,7 +21,8 @@ class CreateTableProjetos extends Migration
                 ->onDelete('cascade');
             $table->string('titulo');
             $table->text('descricao');
-            $table->boolean('status')->default(true);
+            $table->tinyInteger('status')->default(1);
+            $table->timestamp('disabled_at')->nullable();
             $table->timestamps();
         });
     }

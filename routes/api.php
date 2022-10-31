@@ -87,7 +87,7 @@ Route::namespace('App\Http\Controllers\Api')->group(function() {
 
             Route::prefix('projeto')->group(function() {
                 Route::post('/', 'ProjetoController@save');
-                Route::put('/{id}', 'ProjetoController@update')->middleware('auth.basic');
+                Route::put('/{id}', 'ProjetoController@update');
                 Route::delete('/{id}', 'ProjetoController@delete');
             });
 
