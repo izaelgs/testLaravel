@@ -1,0 +1,13 @@
+@include('template.header')
+@include('template.nav')
+<main class="container text-center text-light mt-5">
+    <!-- Avisos em Geral -->
+    <div class="toast-container position-fixed bottom-0 right-0 p-3">
+    </div>
+    <br>
+    <h2>Projetos Concluídos</h2>
+    <p>Abaixo estão listados projetos que nois ja consluiu</p>
+    <div class="row my-4" id="projetos" params=''>
+    </div>
+</main>
+@include('template.footer')

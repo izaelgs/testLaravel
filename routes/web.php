@@ -48,6 +48,18 @@ Route::get('/proponente', function () {
     ]);
 });
 
+Route::get('/projetos', function () {
+    return view('projetos.ativos', [
+        'pagina' => 'projetos'
+    ]);
+});
+
+Route::get('/projetos-concluidos', function () {
+    return view('projetos.concluidos', [
+        'pagina' => 'projetos'
+    ]);
+});
+
 Route::get('/vagas-estagio', function () {
     return view('vagas.vagas', [
         'pagina' => 'app'

@@ -18,8 +18,8 @@
                         </a>
 
                         <ul class="dropdown-menu bg-dark">
-                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Projetos em execução</a></li>
-                            <li><a class="dropdown-item text-secondary bg-dark" href="#">Projetos concluídos</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="/projetos">Projetos em execução</a></li>
+                            <li><a class="dropdown-item text-secondary bg-dark" href="/projetos-concluidos">Projetos concluídos</a></li>
                         </ul>
                     </div>
                 </li>

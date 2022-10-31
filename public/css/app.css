@@ -80,8 +80,13 @@ select:focus {
     /* height: auto !important; */
 }
 
-.card {
+.card .vaga {
     height: 60vh !important;
+    transition: 0.4s;
+}
+
+#projetos .card {
+    height: 20vh !important;
     transition: 0.4s;
 }
 

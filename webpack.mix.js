@@ -15,6 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/estudante.js', 'public/js')
     .js('resources/js/colaborador.js', 'public/js')
     .js('resources/js/proponente.js', 'public/js')
+    .js('resources/js/projetos.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
     ]);

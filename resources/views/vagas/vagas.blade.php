@@ -13,7 +13,7 @@
         <br>
         <div class="row m-0">
             <div class="col-md-4 p-0 pb-4">
-                <div class="card bg-dark">
+                <div class="card bg-dark vaga">
                     <div class="vaga-img mx-2 my-4" style="background-image: url('/img/trainee.jpg');"></div>
                     <div class="card-body">
                         <h5 class="card-title">Pessoa Trainee - Segurança da Informação</h5>
