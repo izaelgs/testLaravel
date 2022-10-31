@@ -7,7 +7,7 @@
     <br>
     <h2>Projetos Concluídos</h2>
     <p>Abaixo estão listados projetos que nois ja consluiu</p>
-    <div class="row my-4" id="projetos" params=''>
+    <div class="row my-4" id="projetos" params='disabled_at;status:=:0'>
     </div>
 </main>
 @include('template.footer')
