@@ -32,7 +32,7 @@ class ProjetoController extends Controller
             $projetos = $projetoRepository->selectFilter($request->get('fields'));
         }
 
-        return response()->json($projetoRepository->getResult()->paginate(10));
+        return response()->json($projetoRepository->getResult()->paginate(9));
         // return new ProjetoCollection($projetos->paginate(10));
     }
 
