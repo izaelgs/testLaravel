@@ -1,6 +1,6 @@
 const server = '35.247.209.51';
 
-appendProjects($('#projetos'), server);
+init($('#projetos'), server);
 
 
 $('[name="form-type"]').change(function (e) {
@@ -12,55 +12,76 @@ $('[name="form-type"]').change(function (e) {
     $(`[${e.target.value}]`).removeClass("hidden");
 });
 
-function appendProjects(input, server) {
+function init(input, server, url = false) {
     let params = input.attr('params');
+    input.empty();
 
     $.ajax({
-        url: `http://${server}/api/projeto/?conditions=${params}`,
+        url: url ? url + `&conditions=${params}` : `http://${server}/api/projeto/?conditions=${params}`,
         dataType: "json"
     }).then(data => {
         let items = data.current_page ? data.data : data;
+        let links = data.current_page ? data.links : null;
 
         items.forEach(item => {
+            appendProject(input, item.titulo, item.descricao);
+        });
 
-            appendToast(input, item.titulo, item.descricao);
-
-            // let option = document.createElement('option');
-
-            // option.value = item.id;
-            // option.append(item.titulo);
-            // if (item.periodos) option.setAttribute('periodos', item.periodos);
-
-            // input.append(option);
+        document.getElementById('pagination').innerHTML = '';
+        links.forEach(link => {
+            if (link.active) appendLink(link.label, link.url);
         });
     });
 
 }
 
-function appendToast(input, title, text) {
+function appendLink(page, url) {
 
-        let col = document.createElement('div');
-        let card = document.createElement('div');
-        let card_body = document.createElement('div');
-        let card_title = document.createElement('h5');
-        let card_text = document.createElement('p');
+    let links = document.getElementById('pagination');
 
-        col.classList.add('col-md-4');
-        card.classList.add('card', 'bg-dark');
-        card_body.classList.add('card-body');
-        card_title.classList.add('card-title');
-        card_text.classList.add('card-text');
+    let li = document.createElement('li');
+    let anch = document.createElement('a');
 
-        card_title.append(title);
-        card_text.append(text);
+    li.classList.add('page-item');
+    anch.classList.add('page-link', 'bg-dark', 'text-success');
 
-        col.append(card);
-        card.append(card_body);
-        card_body.append(card_title);
-        card_body.append(card_text);
+    anch.innerHTML = page;
+    anch.href = url;
 
-        input.append(col);
+    anch.addEventListener('click', e => {
+        e.preventDefault();
+        init($('#projetos'), null, url);
+    })
+
+    li.append(anch);
+    links.append(li);
 
 }
 
-export default appendProjects;
+function appendProject(input, title, text) {
+
+    let col = document.createElement('div');
+    let card = document.createElement('div');
+    let card_body = document.createElement('div');
+    let card_title = document.createElement('h5');
+    let card_text = document.createElement('p');
+
+    col.classList.add('col-md-4');
+    card.classList.add('card', 'bg-dark');
+    card_body.classList.add('card-body');
+    card_title.classList.add('card-title');
+    card_text.classList.add('card-text');
+
+    card_title.append(title);
+    card_text.append(text);
+
+    col.append(card);
+    card.append(card_body);
+    card_body.append(card_title);
+    card_body.append(card_text);
+
+    input.append(col);
+
+}
+
+export default appendProject;

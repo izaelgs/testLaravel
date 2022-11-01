@@ -42,7 +42,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 var server = '35.247.209.51';
-appendProjects($('#projetos'), server);
+init($('#projetos'), server);
 $('[name="form-type"]').change(function (e) {
   var hiddenables = $('[hiddenable]');
   hiddenables.prop("disabled", true);
@@ -50,28 +50,41 @@ $('[name="form-type"]').change(function (e) {
   $("[".concat(e.target.value, "]")).prop("disabled", false);
   $("[".concat(e.target.value, "]")).removeClass("hidden");
 });
-function appendProjects(input, server) {
+function init(input, server) {
+  var url = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
   var params = input.attr('params');
+  input.empty();
   $.ajax({
-    url: "http://".concat(server, "/api/projeto/?conditions=").concat(params),
+    url: url ? url + "&conditions=".concat(params) : "http://".concat(server, "/api/projeto/?conditions=").concat(params),
     dataType: "json"
   }).then(function (data) {
     var items = data.current_page ? data.data : data;
+    var links = data.current_page ? data.links : null;
     items.forEach(function (item) {
-      appendToast(input, item.titulo, item.descricao);
-
-      // let option = document.createElement('option');
-
-      // option.value = item.id;
-      // option.append(item.titulo);
-      // if (item.periodos) option.setAttribute('periodos', item.periodos);
-
-      // input.append(option);
+      appendProject(input, item.titulo, item.descricao);
+    });
+    document.getElementById('pagination').innerHTML = '';
+    links.forEach(function (link) {
+      if (link.active) appendLink(link.label, link.url);
     });
   });
 }
-
-function appendToast(input, title, text) {
+function appendLink(page, url) {
+  var links = document.getElementById('pagination');
+  var li = document.createElement('li');
+  var anch = document.createElement('a');
+  li.classList.add('page-item');
+  anch.classList.add('page-link', 'bg-dark', 'text-success');
+  anch.innerHTML = page;
+  anch.href = url;
+  anch.addEventListener('click', function (e) {
+    e.preventDefault();
+    init($('#projetos'), null, url);
+  });
+  li.append(anch);
+  links.append(li);
+}
+function appendProject(input, title, text) {
   var col = document.createElement('div');
   var card = document.createElement('div');
   var card_body = document.createElement('div');
@@ -90,6 +103,6 @@ function appendToast(input, title, text) {
   card_body.append(card_text);
   input.append(col);
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (appendProjects);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (appendProject);
 /******/ })()
 ;
