@@ -90,3 +90,11 @@ select:focus {
     transition: 0.4s;
 }
 
+.bg-primary {
+    background-color: #82EA0F !important;;
+}
+
+.text-primary {
+    color: #82EA0F !important;;
+}
+

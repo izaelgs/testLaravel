@@ -74,7 +74,7 @@ function appendLink(page, url, active) {
   var li = document.createElement('li');
   var anch = document.createElement('a');
   li.classList.add('page-item');
-  active ? anch.classList.add('page-link', 'bg-success', 'text-dark') : anch.classList.add('page-link', 'bg-dark', 'text-success');
+  active ? anch.classList.add('page-link', 'bg-primary', 'text-dark') : anch.classList.add('page-link', 'bg-dark', 'text-primary');
   anch.innerHTML = page;
   anch.href = url;
   anch.addEventListener('click', function (e) {
