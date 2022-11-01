@@ -51,6 +51,7 @@ function appendLink(page, url, active) {
     anch.addEventListener('click', e => {
         e.preventDefault();
         init($('#projetos'), null, url);
+        document.querySelector('h2').focus();
     })
 
     li.append(anch);
