@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="./">
             <h1>UniTech</h1>
