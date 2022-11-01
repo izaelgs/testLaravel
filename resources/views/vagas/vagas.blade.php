@@ -8,7 +8,7 @@
     <div class="container text-start">
         <div class="bg-dark p-4 mt-4 rounded">
             <h2>Vagas Disponíveis</h2>
-            <p>Assim que as vaga ficar disponivel nois bota aqui pra vcs</p>
+            <p>Assim que as vagas ficarem disponíveis, atualizaremos este menu...</p>
         </div>
         <br>
         <div class="row m-0">

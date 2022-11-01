@@ -65,16 +65,16 @@ function init(input, server) {
     });
     document.getElementById('pagination').innerHTML = '';
     links.forEach(function (link) {
-      if (link.active) appendLink(link.label, link.url);
+      if (link.url) appendLink(link.label, link.url, link.active);
     });
   });
 }
-function appendLink(page, url) {
+function appendLink(page, url, active) {
   var links = document.getElementById('pagination');
   var li = document.createElement('li');
   var anch = document.createElement('a');
   li.classList.add('page-item');
-  anch.classList.add('page-link', 'bg-dark', 'text-success');
+  active ? anch.classList.add('page-link', 'bg-success', 'text-dark') : anch.classList.add('page-link', 'bg-dark', 'text-success');
   anch.innerHTML = page;
   anch.href = url;
   anch.addEventListener('click', function (e) {

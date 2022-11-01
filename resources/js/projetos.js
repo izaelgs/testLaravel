@@ -29,13 +29,13 @@ function init(input, server, url = false) {
 
         document.getElementById('pagination').innerHTML = '';
         links.forEach(link => {
-            if (link.active) appendLink(link.label, link.url);
+            if (link.url) appendLink(link.label, link.url, link.active);
         });
     });
 
 }
 
-function appendLink(page, url) {
+function appendLink(page, url, active) {
 
     let links = document.getElementById('pagination');
 
@@ -43,7 +43,7 @@ function appendLink(page, url) {
     let anch = document.createElement('a');
 
     li.classList.add('page-item');
-    anch.classList.add('page-link', 'bg-dark', 'text-success');
+    active ? anch.classList.add('page-link', 'bg-success', 'text-dark') : anch.classList.add('page-link', 'bg-dark', 'text-success');
 
     anch.innerHTML = page;
     anch.href = url;
