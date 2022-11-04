@@ -60,7 +60,6 @@ class EstudanteController extends Controller
                 ]);
             }
 
-            $user = User::findOrFail(1);
 
             $dados = [
                 'nome_completo' => $estudante->nome_completo,
@@ -76,7 +75,13 @@ class EstudanteController extends Controller
                 'id' => $estudante->id,
 
             ];
-            Mail::send(new newUnitech($user, $dados, 'Estudante'));
+
+            $users = User::get();
+
+            foreach($users as $user) {
+                Mail::send(new newUnitech($user, $dados, 'Estudante'));
+            }
+
 
             return response()->json([
                 'data' => [
