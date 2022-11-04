@@ -17,7 +17,7 @@ class CursosSeeder extends Seeder
         $cursos = Curso::insert([
             ['titulo' => 'Engenharia de Software', 'periodos' => 8],
             ['titulo' => 'Sistema de Informação', 'periodos' => 8],
-            ['titulo' => 'TADS - Tecnologia em Analise e Desenvolvimento de Sistemae', 'periodos' => 5],
+            ['titulo' => 'TADS - Tecnologia em Analise e Desenvolvimento de Sistemas', 'periodos' => 5],
         ]);
     }
 }
